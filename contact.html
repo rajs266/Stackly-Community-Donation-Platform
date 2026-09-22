@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact Us | Stackly Community Foundation - Salem, Tamil Nadu</title>
+  <meta name="description" content="Get in touch with Stackly Community Foundation at MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu. Connect with our donor support desk or visit our community office.">
+  <link rel="icon" type="image/webp" href="assets/top-logo.webp">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="stackly-preloader" id="stacklyPreloader">
+    <div class="preloader-inner">
+      <div class="preloader-pulse-ring"></div>
+      <div class="preloader-heart-icon">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+      </div>
+      <div class="preloader-brand">
+        <span class="brand-text">STACKLY</span>
+        <span class="brand-sub">Community Foundation • Salem</span>
+      </div>
+      <div class="preloader-prog-bar">
+        <div class="preloader-prog-fill" id="preloaderProgFill"></div>
+      </div>
+      <div class="preloader-status" id="preloaderStatus">Connecting Grassroots Drives...</div>
+    </div>
+  </div>
+
+
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  
+  <header class="header-main">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="assets/logo.webp" alt="Stackly Logo">
+      </a>
+
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="donations.html" class="nav-link-custom">Donations</a>
+        <a href="campaigns.html" class="nav-link-custom">Campaigns</a>
+        <a href="blog.html" class="nav-link-custom">Stories</a>
+        <a href="contact.html" class="nav-link-custom active">Contact</a>
+      </nav>
+
+      
+      <div class="d-flex align-items-center gap-2">
+        <a href="get-started.html" class="btn-pill-teal d-none d-md-inline-flex" style="padding: 10px 18px; font-size: 0.92rem;">
+          <span>Get Started</span>
+          <i class="fa-solid fa-user-plus"></i>
+        </a>
+        <a href="javascript:void(0)" class="btn-pill-orange d-none d-sm-inline-flex trigger-donation-modal">
+          <span>Donate Now</span>
+          <i class="fa-solid fa-heart"></i>
+        </a>
+        <button class="mobile-nav-toggle d-lg-none" id="mobileNavToggle" aria-label="Open Navigation"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <img src="assets/logo.webp" alt="Stackly" style="height: 38px;">
+      <button class="close-btn" id="mobileDrawerClose" aria-label="Close Navigation"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+        <ul class="mobile-drawer-nav mb-4">
+      <li><a href="index.html"><i class="fa-solid fa-house me-2"></i> Home</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info me-2"></i> About</a></li>
+      <li><a href="donations.html"><i class="fa-solid fa-hand-holding-heart me-2"></i> Donations</a></li>
+      <li><a href="campaigns.html"><i class="fa-solid fa-bullhorn me-2"></i> Campaigns</a></li>
+      <li><a href="blog.html"><i class="fa-solid fa-newspaper me-2"></i> Stories</a></li>
+      <li><a href="contact.html" class="active"><i class="fa-solid fa-envelope me-2"></i> Contact</a></li>
+    </ul>
+    <div class="mt-auto pt-3 border-top border-secondary">
+      <div class="d-grid gap-2 mb-3">
+        <a href="get-started.html" class="btn-pill-teal text-center"><span class="btn-text">Get Started</span></a>
+        <a href="javascript:void(0)" class="btn-pill-orange text-center trigger-donation-modal"><span class="btn-text">Donate Now</span></a>
+      </div>
+    </div>
+  </aside>
+
+  
+  <section class="page-hero-banner-img" style="background-image: url('assets/pexels-mikael-blomkvist-6476259.webp');">
+    <div class="container text-center">
+      <div class="page-hero-trust-pill reveal-card reveal-top">
+        <i class="fa-solid fa-clock text-warning"></i>
+        <span>2-Hour Ground Dispatch Response • Chinna Thirupathi Coordination Desk</span>
+      </div>
+      <div class="section-eyebrow-orange justify-content-center text-warning mb-2 reveal-card reveal-bottom stagger-1">
+        <span class="hero-badge-line"></span>
+        <span>Reach Salem Headquarters</span>
+        <span class="hero-badge-line"></span>
+      </div>
+      <h1 class="display-4 fw-bold text-white mb-3 reveal-card reveal-bottom stagger-2">We’re Here to Help You Help Others</h1>
+      <p class="text-white-50 mx-auto mb-4 reveal-card reveal-bottom stagger-3" style="max-width: 600px; font-size: 1.05rem;">
+        Questions about 80G certificates, CSR matching, or volunteering? Connect directly with our Salem coordinators — we respond within 2 hours.
+      </p>
+      <div class="page-hero-breadcrumb reveal-card reveal-bottom stagger-4">
+        <a href="index.html"><i class="fa-solid fa-house me-1"></i> Home</a>
+        <i class="fa-solid fa-chevron-right fs-xs"></i>
+        <span>Contact Desk</span>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: var(--color-cream-bg);">
+    <div class="container py-4">
+      <div class="row g-5">
+        
+        
+        <div class="col-lg-7 reveal-card reveal-left">
+          <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm">
+            <h3 class="fw-bold text-dark mb-2">Send an Inquiry to Salem Dispatch</h3>
+            <p class="text-muted small mb-4">Our community coordinators typically reply within 2 business hours.</p>
+
+            <form id="contactInquiryForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-group-custom">
+                    <label class="form-label-custom" for="contactName">Your Full Name *</label>
+                    <input type="text" class="form-control-custom" id="contactName" placeholder="e.g. Ramesh Kumar" required>
+                    <div class="form-error-slot"><span class="form-error-msg"></span></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group-custom">
+                    <label class="form-label-custom" for="contactEmail">Email Address *</label>
+                    <input type="email" class="form-control-custom" id="contactEmail" placeholder="name@domain.com" required>
+                    <div class="form-error-slot"><span class="form-error-msg"></span></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group-custom">
+                    <label class="form-label-custom" for="contactPhone">Phone / WhatsApp Number *</label>
+                    <input type="tel" class="form-control-custom" id="contactPhone" placeholder="9876500000" inputmode="numeric" pattern="[0-9]+" required>
+                    <div class="form-error-slot"><span class="form-error-msg"></span></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group-custom">
+                    <label class="form-label-custom" for="contactDept">Inquiry Desk *</label>
+                    <select class="form-control-custom d-none" id="contactDept" required>
+                      <option value="">— Select a desk —</option>
+                      <option value="Donor Support & 80G Tax Help">Donor Support &amp; 80G Tax Help</option>
+                      <option value="CSR & Corporate Giving">CSR &amp; Corporate Giving</option>
+                      <option value="Volunteer Registration">Volunteer Registration</option>
+                      <option value="Grassroots NGO Verification">Grassroots NGO Verification</option>
+                      <option value="General Community Feedback">General Community Feedback</option>
+                    </select>
+                    <div class="custom-cause-select-container contact-dept-select-container" id="contactDeptSelectBox">
+                      <button type="button" class="custom-cause-trigger" id="contactDeptTrigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="custom-cause-trigger-text" id="contactDeptLabel">— Select a desk —</span>
+                        <i class="fa-solid fa-chevron-down custom-cause-arrow"></i>
+                      </button>
+                      <div class="custom-cause-dropdown-menu" id="contactDeptMenu" role="listbox">
+                        <div class="custom-cause-option active" role="option" data-value="" aria-selected="true">
+                          <span>— Select a desk —</span>
+                          <i class="fa-solid fa-check option-check"></i>
+                        </div>
+                        <div class="custom-cause-option" role="option" data-value="Donor Support & 80G Tax Help" aria-selected="false">
+                          <span>Donor Support &amp; 80G Tax Help</span>
+                          <i class="fa-solid fa-check option-check"></i>
+                        </div>
+                        <div class="custom-cause-option" role="option" data-value="CSR & Corporate Giving" aria-selected="false">
+                          <span>CSR &amp; Corporate Giving</span>
+                          <i class="fa-solid fa-check option-check"></i>
+                        </div>
+                        <div class="custom-cause-option" role="option" data-value="Volunteer Registration" aria-selected="false">
+                          <span>Volunteer Registration</span>
+                          <i class="fa-solid fa-check option-check"></i>
+                        </div>
+                        <div class="custom-cause-option" role="option" data-value="Grassroots NGO Verification" aria-selected="false">
+                          <span>Grassroots NGO Verification</span>
+                          <i class="fa-solid fa-check option-check"></i>
+                        </div>
+                        <div class="custom-cause-option" role="option" data-value="General Community Feedback" aria-selected="false">
+                          <span>General Community Feedback</span>
+                          <i class="fa-solid fa-check option-check"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-error-slot"><span class="form-error-msg"></span></div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group-custom">
+                    <label class="form-label-custom" for="contactMessage">Your Message / Inquiry *</label>
+                    <textarea class="form-control-custom" id="contactMessage" rows="5" placeholder="Share how you'd like to collaborate or what questions you have..." required></textarea>
+                    <div class="form-error-slot"><span class="form-error-msg"></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-pill-orange w-100 justify-content-center py-3 mt-3">
+                <span>Submit Inquiry to Salem Desk</span>
+                <i class="fa-solid fa-paper-plane ms-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-5 reveal-card reveal-right">
+          <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm h-100 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-success text-white px-3 py-2 rounded-pill fw-bold mb-3">
+                <i class="fa-solid fa-building me-1"></i> Registered Salem Headquarters
+              </span>
+              <h3 class="fw-bold text-dark mb-4">Stackly Community Foundation</h3>
+
+              <div class="d-flex align-items-start gap-3 mb-4">
+                <div class="charivo-feature-icon orange" style="width: 44px; height: 44px; font-size: 1.1rem;">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-1">Physical Address</h6>
+                  <p class="text-muted small mb-0">
+                    MMR Complex, Chinna Thirupathi,<br>
+                    near Chinna Muniyappan Kovil,<br>
+                    Salem, Tamil Nadu 636008, India
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 mb-4">
+                <div class="charivo-feature-icon teal" style="width: 44px; height: 44px; font-size: 1.1rem;">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-1">Direct Help Line</h6>
+                  <p class="text-muted small mb-0">+91 98765 43210 / 0427 245 8899</p>
+                  <small class="text-muted">Available Mon - Sat, 8:00 AM - 8:00 PM</small>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 mb-4">
+                <div class="charivo-feature-icon orange" style="width: 44px; height: 44px; font-size: 1.1rem;">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-1">Official Email</h6>
+                  <p class="text-muted small mb-0">contact@thestackly.org</p>
+                  <small class="text-muted">Direct dispatch to Chinna Thirupathi desk</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-top">
+              <a href="404.html" class="btn-pill-teal btn-whatsapp w-100 justify-content-center">
+                <i class="fa-brands fa-whatsapp me-2"></i> Instant WhatsApp Dispatch
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: #ffffff;">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow-orange justify-content-center">
+          <span class="hero-badge-line"></span>
+          <span>Grassroots Presence</span>
+          <span class="hero-badge-line"></span>
+        </div>
+        <h2 class="section-title-dark">Our 4 Operational Salem Field Centers</h2>
+        <p class="section-lead-p mx-auto" style="max-width: 600px;">
+          Physical depots where dry rations are staged, medical kits tested, and volunteer brigades gather.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="depot-card-charivo reveal-card reveal-bottom stagger-1">
+            <img src="assets/cause_kitchen.webp" alt="Central Kitchen" class="depot-card-thumb">
+            <div class="p-3">
+              <span class="badge bg-success text-white mb-2">Central Cloud Kitchen</span>
+              <h5 class="fw-bold fs-6 mb-1">Chinna Thirupathi Depot</h5>
+              <p class="text-muted small mb-2"><i class="fa-solid fa-user me-1 text-success"></i> Lead: Suresh K.</p>
+              <p class="text-muted small mb-2">Prepares 2,400 hot breakfasts every morning for local municipal schools.</p>
+              <div class="border-top pt-2 small text-muted">
+                <i class="fa-solid fa-clock me-1"></i> 5:30 AM - 4:00 PM
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="depot-card-charivo reveal-card reveal-bottom stagger-2">
+            <img src="assets/cause_healthcare.webp" alt="Medical Camp" class="depot-card-thumb">
+            <div class="p-3">
+              <span class="badge bg-primary text-white mb-2">Pediatric Outpost</span>
+              <h5 class="fw-bold fs-6 mb-1">Omalur Medical Outpost</h5>
+              <p class="text-muted small mb-2"><i class="fa-solid fa-user me-1 text-primary"></i> Lead: Dr. Priya S.</p>
+              <p class="text-muted small mb-2">Diagnostic staging center for rural children and mobile pharmacy depot.</p>
+              <div class="border-top pt-2 small text-muted">
+                <i class="fa-solid fa-clock me-1"></i> 8:00 AM - 8:00 PM
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="depot-card-charivo reveal-card reveal-bottom stagger-3">
+            <img src="assets/cause_water.webp" alt="Water Station" class="depot-card-thumb">
+            <div class="p-3">
+              <span class="badge bg-info text-dark mb-2">Water Works Depot</span>
+              <h5 class="fw-bold fs-6 mb-1">Attur Agricultural Depot</h5>
+              <p class="text-muted small mb-2"><i class="fa-solid fa-user me-1 text-info"></i> Lead: Arjun R.</p>
+              <p class="text-muted small mb-2">Solar borehole parts storage and emergency water can distribution hub.</p>
+              <div class="border-top pt-2 small text-muted">
+                <i class="fa-solid fa-clock me-1"></i> 9:00 AM - 6:00 PM
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="depot-card-charivo reveal-card reveal-bottom stagger-4">
+            <img src="assets/cause_education.webp" alt="Classroom Support" class="depot-card-thumb">
+            <div class="p-3">
+              <span class="badge bg-warning text-dark mb-2">Education Lab</span>
+              <h5 class="fw-bold fs-6 mb-1">Yercaud Foothills Hub</h5>
+              <p class="text-muted small mb-2"><i class="fa-solid fa-user me-1 text-warning"></i> Lead: Deepika M.</p>
+              <p class="text-muted small mb-2">Digital tablet repair center and library for rural tribal students.</p>
+              <div class="border-top pt-2 small text-muted">
+                <i class="fa-solid fa-clock me-1"></i> 9:00 AM - 5:30 PM
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: var(--color-cream-bg);">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-card reveal-left">
+          <div class="section-eyebrow-orange">
+            <span class="hero-badge-line"></span>
+            <span>Visit Our Salem Desk</span>
+          </div>
+          <h2 class="section-title-dark">Landmark Directions to Chinna Thirupathi HQ</h2>
+          <p class="section-lead-p">
+            Located in the heart of Salem’s community sector, our central office is easily accessible by bus, auto, and train.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mt-4">
+            <div class="d-flex align-items-start gap-3 bg-white p-3 rounded-3 border">
+              <div class="charivo-feature-icon orange" style="width: 38px; height: 38px; font-size: 1rem;">
+                <i class="fa-solid fa-bus"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">From Salem Junction (Railway)</h6>
+                <p class="text-muted small mb-0">Take Bus #13 or #27 toward Chinna Thirupathi (15 mins commute). Alight at Chinna Muniyappan Kovil stop.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 bg-white p-3 rounded-3 border">
+              <div class="charivo-feature-icon teal" style="width: 38px; height: 38px; font-size: 1rem;">
+                <i class="fa-solid fa-map-pin"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1">Exact Landmark</h6>
+                <p class="text-muted small mb-0">MMR Complex, 2nd Floor, directly opposite the Chinna Muniyappan Kovil entrance arch.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <a href="https://maps.google.com/?q=Chinna+Tirupathi+Salem" target="_blank" class="btn-pill-teal">
+              <span>Open in Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal-card reveal-right">
+          <div class="rounded-4 overflow-hidden border shadow-sm" style="height: 380px;">
+            <iframe 
+              title="Stackly Location Salem" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15629.585721111624!2d78.1678!3d11.6845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf038f8f906e5%3A0x2db4c8bc4ff99be9!2sChinna%20Tirupathi%2C%20Salem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1695280000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: #ffffff;">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow-orange justify-content-center">
+          <span class="hero-badge-line"></span>
+          <span>Specialized Desks</span>
+          <span class="hero-badge-line"></span>
+        </div>
+        <h2 class="section-title-dark">Direct Department Assistance</h2>
+        <p class="section-lead-p mx-auto" style="max-width: 600px;">
+          Reach the specific coordinator responsible for your inquiry.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="cause-card-3d p-4 text-center h-100 reveal-card reveal-bottom stagger-1">
+            <div class="charivo-feature-icon teal mx-auto mb-3">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <h5 class="fw-bold mb-1">Donor &amp; 80G Tax Desk</h5>
+            <p class="text-muted small mb-3">Instant receipts, PAN corrections, and tax exemption queries.</p>
+            <a href="mailto:tax@thestackly.org" class="text-decoration-none fw-bold small text-success">tax@thestackly.org</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="cause-card-3d p-4 text-center h-100 reveal-card reveal-bottom stagger-2">
+            <div class="charivo-feature-icon orange mx-auto mb-3">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h5 class="fw-bold mb-1">CSR Corporate Desk</h5>
+            <p class="text-muted small mb-3">Schedule VII CSR compliance, employee matching, and factory audits.</p>
+            <a href="mailto:csr@thestackly.org" class="text-decoration-none fw-bold small text-warning">csr@thestackly.org</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="cause-card-3d p-4 text-center h-100 reveal-card reveal-bottom stagger-3">
+            <div class="charivo-feature-icon teal mx-auto mb-3">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+            <h5 class="fw-bold mb-1">Volunteer Cell</h5>
+            <p class="text-muted small mb-3">Weekend kitchen duties, student internships, and ward drives.</p>
+            <a href="mailto:volunteer@thestackly.org" class="text-decoration-none fw-bold small text-success">volunteer@thestackly.org</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="cause-card-3d p-4 text-center h-100 reveal-card reveal-bottom stagger-4">
+            <div class="charivo-feature-icon orange mx-auto mb-3">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <h5 class="fw-bold mb-1">Audit &amp; Media Desk</h5>
+            <p class="text-muted small mb-3">Annual financial audit statements, journalist queries, and field visits.</p>
+            <a href="mailto:audit@thestackly.org" class="text-decoration-none fw-bold small text-warning">audit@thestackly.org</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: var(--color-cream-bg);">
+    <div class="container py-4">
+      <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm reveal-card reveal-bottom">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">
+              <i class="fa-solid fa-door-open me-1"></i> Community Open Hours
+            </span>
+            <h3 class="fw-bold text-dark mb-2">Sunday Morning Volunteer Walk-In Orientation</h3>
+            <p class="text-muted small mb-3">
+              Every Sunday between 9:30 AM and 11:30 AM, our Chinna Thirupathi HQ hosts a friendly orientation for new donors and volunteers. Meet the trustees, inspect our food packaging workflow, and learn how to participate in local drives.
+            </p>
+            <div class="d-flex flex-wrap gap-4 small fw-semibold text-muted">
+              <span><i class="fa-solid fa-circle-check text-success me-1"></i> No prior registration needed</span>
+              <span><i class="fa-solid fa-circle-check text-success me-1"></i> Students &amp; families welcome</span>
+              <span><i class="fa-solid fa-circle-check text-success me-1"></i> In-kind sealed rations accepted</span>
+            </div>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="get-started.html" class="btn-pill-orange">
+              <span>Register as Supporter</span>
+              <i class="fa-solid fa-user-plus ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5" style="background-color: #ffffff;">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow-orange justify-content-center">
+          <span class="hero-badge-line"></span>
+          <span>Help &amp; Clarifications</span>
+          <span class="hero-badge-line"></span>
+        </div>
+        <h2 class="section-title-dark">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            
+            <div class="accordion-item border rounded-3 mb-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  How do I get my 80G Tax Exemption Certificate?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small lh-lg">
+                  Every contribution on Stackly automatically generates a digitally signed 80G tax receipt featuring your PAN and Transaction Reference. It is shown instantly on your screen, sent via email, and preserved indefinitely in your Supporter Dashboard.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Can I visit the community kitchens or projects in Salem?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small lh-lg">
+                  Yes! We maintain an open-door policy. You are welcome to visit our Chinna Thirupathi central cloud kitchen or join any Saturday morning rural feeding drive. Simply notify our desk 24 hours in advance so our field coordinator can guide you.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  How do you prevent donation fraud or misallocation?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small lh-lg">
+                  We enforce zero-cash transactions. Hospital bills, grain sacks, and borewell drilling parts are directly paid to vendor bank accounts against certified GST invoices. Geotagged photographs are taken at every distribution event.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="footer-charivo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand"><img src="assets/logo.webp" alt="Stackly"></div>
+          <p class="footer-desc">
+            Stackly is Salem’s verified community donation network. We connect genuine donors with verified grassroots causes with 100% photo-verified transparency and 80G tax exemptions.
+          </p>
+          <div class="footer-social-links">
+            <a href="404.html" class="footer-social-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="campaigns.html">Campaigns</a></li>
+            <li><a href="blog.html">Stories</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Account</h4>
+          <ul class="footer-links">
+            <li><a href="signin.html">Donor Login</a></li>
+            <li><a href="get-started.html">Create Account</a></li>
+            <li><a href="donor.html">Supporter Dashboard</a></li>
+            <li><a href="admin-dashboard.html">Admin Operations</a></li>
+            <li><a href="donations.html">80G Tax Receipts</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 footer-hq-col">
+          <h4 class="footer-heading">Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot footer-contact-icon"></i>
+            <div>
+              <strong>Stackly Community Foundation</strong><br>
+              MMR Complex, Chinna Thirupathi,<br>
+              near Chinna Muniyappan Kovil,<br>
+              Salem, Tamil Nadu 636008
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone footer-contact-icon"></i>
+            <div>+91 98765 43210 / 0427 245 8899</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope footer-contact-icon"></i>
+            <div>contact@thestackly.org</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-md-start mb-2 mb-md-0">
+            &copy; 2026 Stackly. All Rights Reserved. Reg NGO: SLM/2026/8892.
+          </div>
+          <div class="col-md-6 text-md-end">
+            <span>Designed for Salem Grassroots Communities • 100% Mobile &amp; Tablet Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  <div class="modal fade modal-charivo" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="donationModalLabel"><i class="fa-solid fa-heart text-warning me-2"></i> Make a Verified Contribution</h5>
+            <small class="text-white-50">Eligible for Section 80G Tax Exemption Certificate</small>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="donationFormModal">
+            
+            <div class="form-group-custom">
+              <label class="form-label-custom" for="modalCauseSelect">Select Cause</label>
+              <select class="d-none" id="modalCauseSelect" name="selectedCause">
+                <option value="General Community Fund" selected>General Community Welfare Fund (Salem HQ)</option>
+                <option value="Daily Nutrition for 450 Slum Children">Daily Nutrition for 450 Slum Children</option>
+                <option value="School Kits & Digital Tabs for Rural Girls">School Kits &amp; Digital Tabs for Rural Girls</option>
+                <option value="Solar-Powered Borewell for Chinna Muniyappan Kovil Ward">Solar-Powered Borewell Station</option>
+                <option value="Emergency Monsoon Medical Relief">Emergency Monsoon Medical Relief</option>
+              </select>
+              <div class="custom-cause-select-container" id="customCauseSelectBox">
+                <button type="button" class="custom-cause-trigger" id="customCauseTrigger" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="custom-cause-trigger-text" id="customCauseLabel">General Community Welfare Fund (Salem HQ)</span>
+                  <i class="fa-solid fa-chevron-down custom-cause-arrow"></i>
+                </button>
+                <div class="custom-cause-dropdown-menu" id="customCauseMenu" role="listbox">
+                  <div class="custom-cause-option active" role="option" data-value="General Community Fund" aria-selected="true">
+                    <span>General Community Welfare Fund (Salem HQ)</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                  <div class="custom-cause-option" role="option" data-value="Daily Nutrition for 450 Slum Children" aria-selected="false">
+                    <span>Daily Nutrition for 450 Slum Children</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                  <div class="custom-cause-option" role="option" data-value="School Kits & Digital Tabs for Rural Girls" aria-selected="false">
+                    <span>School Kits &amp; Digital Tabs for Rural Girls</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                  <div class="custom-cause-option" role="option" data-value="Solar-Powered Borewell for Chinna Muniyappan Kovil Ward" aria-selected="false">
+                    <span>Solar-Powered Borewell Station</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                  <div class="custom-cause-option" role="option" data-value="Emergency Monsoon Medical Relief" aria-selected="false">
+                    <span>Emergency Monsoon Medical Relief</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="d-flex gap-3 mb-3">
+              <label class="d-flex align-items-center gap-2 cursor-pointer">
+                <input type="radio" name="donationFreq" value="onetime" checked>
+                <span class="fw-semibold small">One-Time Gift</span>
+              </label>
+              <label class="d-flex align-items-center gap-2 cursor-pointer">
+                <input type="radio" name="donationFreq" value="monthly">
+                <span class="fw-semibold small text-success"><i class="fa-solid fa-rotate me-1"></i> Monthly Recurring</span>
+              </label>
+            </div>
+
+            
+            <div class="preset-amount-grid">
+              <div class="preset-amt-btn" data-amt="500">₹500</div>
+              <div class="preset-amt-btn active" data-amt="1000">₹1,000</div>
+              <div class="preset-amt-btn" data-amt="2500">₹2,500</div>
+              <div class="preset-amt-btn" data-amt="5000">₹5,000</div>
+            </div>
+
+            
+            <div class="form-group-custom">
+              <label class="form-label-custom" for="customAmountInput">Custom Amount (INR)</label>
+              <input type="number" class="form-control-custom" id="customAmountInput" value="1000" min="50" placeholder="Enter amount in ₹">
+            </div>
+
+            
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <input type="text" class="form-control-custom" id="donorNameInput" placeholder="Your Name" required>
+              </div>
+              <div class="col-6">
+                <input type="email" class="form-control-custom" id="donorEmailInput" placeholder="Email for Receipt" required>
+              </div>
+            </div>
+
+            
+            <button type="submit" class="btn-pill-orange w-100 justify-content-center py-3">
+              <span>Complete Contribution</span>
+              <i class="fa-solid fa-arrow-right ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="main.js"></script>
+
+  <script>
+    
+    const NAME_RE  = /^[a-zA-Z\s]{2,60}$/;
+    const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+    
+    const PHONE_RE = /^[6-9]\d{9}$/;
+
+    function setContactFieldError(inputEl, msg) {
+      if (!inputEl) return;
+      const parent = inputEl.closest('.form-group-custom');
+      const msgEl  = parent ? parent.querySelector('.form-error-msg') : null;
+      if (msg) {
+        inputEl.classList.add('error');
+        if (msgEl) { msgEl.textContent = msg; msgEl.classList.add('show'); }
+      } else {
+        inputEl.classList.remove('error');
+        if (msgEl) { msgEl.textContent = ''; msgEl.classList.remove('show'); }
+      }
+    }
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('#contactInquiryForm .form-control-custom').forEach(el => {
+        el.addEventListener('input',  () => setContactFieldError(el, ''));
+        el.addEventListener('change', () => setContactFieldError(el, ''));
+      });
+    });
+
+    function submitContactForm() {
+      const name    = document.getElementById('contactName');
+      const email   = document.getElementById('contactEmail');
+      const phone   = document.getElementById('contactPhone');
+      const dept    = document.getElementById('contactDept');
+      const message = document.getElementById('contactMessage');
+
+      
+      [name, email, phone, dept, message].forEach(el => setContactFieldError(el, ''));
+
+      let valid = true;
+
+      
+      if (!name.value.trim() || !NAME_RE.test(name.value.trim())) {
+        setContactFieldError(name, 'Enter a valid full name (letters only).');
+        valid = false;
+      }
+
+      
+      if (!email.value.trim() || !EMAIL_RE.test(email.value.trim())) {
+        setContactFieldError(email, 'Enter a valid email address.');
+        valid = false;
+      }
+
+      
+      const rawPhone = phone.value.trim().replace(/[\s\-]/g, '').replace(/^\+?91/, '');
+      if (!rawPhone || !PHONE_RE.test(rawPhone)) {
+        setContactFieldError(phone, 'Enter a valid 10-digit Indian mobile number.');
+        valid = false;
+      }
+
+      
+      if (!dept.value) {
+        setContactFieldError(dept, 'Please select an inquiry desk.');
+        valid = false;
+      }
+
+      
+      if (!message.value.trim()) {
+        setContactFieldError(message, 'Please enter your message or inquiry.');
+        valid = false;
+      }
+
+      
+      if (!valid) return;
+
+      
+      window.location.href = '404.html';
+    }
+  </script>
+</body>
+</html>

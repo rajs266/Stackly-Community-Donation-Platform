@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Emergency Campaigns &amp; Relief Drives | Stackly Platform</title>
+  <meta name="description" content="Support high-priority emergency disaster relief, medical distress appeals, and seasonal welfare drives across Salem and surrounding Tamil Nadu districts.">
+  <link rel="icon" type="image/webp" href="assets/top-logo.webp">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="stackly-preloader" id="stacklyPreloader">
+    <div class="preloader-inner">
+      <div class="preloader-pulse-ring"></div>
+      <div class="preloader-heart-icon">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+      </div>
+      <div class="preloader-brand">
+        <span class="brand-text">STACKLY</span>
+        <span class="brand-sub">Community Foundation • Salem</span>
+      </div>
+      <div class="preloader-prog-bar">
+        <div class="preloader-prog-fill" id="preloaderProgFill"></div>
+      </div>
+      <div class="preloader-status" id="preloaderStatus">Connecting Grassroots Drives...</div>
+    </div>
+  </div>
+
+
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  
+  <header class="header-main">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="assets/logo.webp" alt="Stackly Logo">
+      </a>
+
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="donations.html" class="nav-link-custom">Donations</a>
+        <a href="campaigns.html" class="nav-link-custom active">Campaigns</a>
+        <a href="blog.html" class="nav-link-custom">Stories</a>
+        <a href="contact.html" class="nav-link-custom">Contact</a>
+      </nav>
+
+      
+      <div class="d-flex align-items-center gap-2">
+        <a href="get-started.html" class="btn-pill-teal d-none d-md-inline-flex" style="padding: 10px 18px; font-size: 0.92rem;">
+          <span>Get Started</span>
+          <i class="fa-solid fa-user-plus"></i>
+        </a>
+        <a href="javascript:void(0)" class="btn-pill-orange d-none d-sm-inline-flex trigger-donation-modal">
+          <span>Donate Now</span>
+          <i class="fa-solid fa-heart"></i>
+        </a>
+        <button class="mobile-nav-toggle d-lg-none" id="mobileNavToggle" aria-label="Open Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <img src="assets/logo.webp" alt="Stackly" style="height: 38px;">
+      <button class="close-btn" id="mobileDrawerClose" aria-label="Close Navigation"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+        <ul class="mobile-drawer-nav mb-4">
+      <li><a href="index.html"><i class="fa-solid fa-house me-2"></i> Home</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info me-2"></i> About</a></li>
+      <li><a href="donations.html"><i class="fa-solid fa-hand-holding-heart me-2"></i> Donations</a></li>
+      <li><a href="campaigns.html" class="active"><i class="fa-solid fa-bullhorn me-2"></i> Campaigns</a></li>
+      <li><a href="blog.html"><i class="fa-solid fa-newspaper me-2"></i> Stories</a></li>
+      <li><a href="contact.html"><i class="fa-solid fa-envelope me-2"></i> Contact</a></li>
+    </ul>
+    <div class="mt-auto pt-3 border-top border-secondary">
+      <div class="d-grid gap-2 mb-3">
+        <a href="get-started.html" class="btn-pill-teal text-center"><span class="btn-text">Get Started</span></a>
+        <a href="javascript:void(0)" class="btn-pill-orange text-center trigger-donation-modal"><span class="btn-text">Donate Now</span></a>
+      </div>
+    </div>
+  </aside>
+
+  
+  <section class="page-hero-banner-img emergency-theme" style="background-image: url('assets/cause_disaster.webp');">
+    <div class="container text-center">
+      <div class="page-hero-trust-pill reveal-card reveal-top">
+        <i class="fa-solid fa-triangle-exclamation text-warning"></i>
+        <span>Active High-Priority Appeals • 24/7 Rapid Ground Response</span>
+      </div>
+      <div class="section-eyebrow-orange justify-content-center text-warning mb-2 reveal-card reveal-bottom stagger-1">
+        <span class="hero-badge-line"></span>
+        <span>Salem Emergency Dispatch</span>
+        <span class="hero-badge-line"></span>
+      </div>
+      <h1 class="display-4 fw-bold text-white mb-3 reveal-card reveal-bottom stagger-2">Live Salem Disaster &amp; Distress Appeals</h1>
+      <p class="text-white-50 mx-auto mb-4 reveal-card reveal-bottom stagger-3" style="max-width: 680px; font-size: 1.05rem;">
+        Rapid deployment campaigns requiring urgent community funding within 24 to 72 hours. Stationed at Chinna Thirupathi, our field teams disburse 100% of donations directly to local hospitals and suppliers.
+      </p>
+      <div class="page-hero-breadcrumb reveal-card reveal-bottom stagger-4">
+        <a href="index.html"><i class="fa-solid fa-house me-1"></i> Home</a>
+        <i class="fa-solid fa-chevron-right fs-xs"></i>
+        <span>Emergency Campaigns</span>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: var(--color-cream-bg);">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow-orange justify-content-center">
+          <span class="hero-badge-line"></span>
+          <span>Immediate Ground Need</span>
+          <span class="hero-badge-line"></span>
+        </div>
+        <h2 class="section-title-dark">Critical Cases Awaiting Timely Intervention</h2>
+        <p class="section-lead-p mx-auto" style="max-width: 600px;">
+          Every rupee donated directly finances certified medicine, dry rations, and infrastructure.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        
+        <div class="col-lg-6">
+          <div class="cause-card-3d p-4 h-100 reveal-card reveal-left">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-danger text-white px-3 py-2 rounded-pill fw-bold">
+                <i class="fa-solid fa-clock me-1"></i> 14 Hours Left
+              </span>
+              <span class="text-danger fw-bold small"><i class="fa-solid fa-circle-exclamation me-1"></i> High Priority</span>
+            </div>
+            <div class="row g-4">
+              <div class="col-md-5">
+                <img src="assets/cause_disaster.webp" alt="Monsoon Flooding" class="rounded-4 w-100 h-100 object-fit-cover" style="min-height: 200px;">
+              </div>
+              <div class="col-md-7 d-flex flex-column justify-content-between">
+                <div>
+                  <h3 class="fw-bold fs-5 mb-2">Salem Flash Inundation Food Drop</h3>
+                  <p class="text-muted small mb-3">
+                    Dry rations and drinking water for submerged settlements near Chinna Muniyappan Kovil.
+                  </p>
+                </div>
+                <div>
+                  <div class="cause-progress-track mb-2">
+                    <div class="cause-progress-fill" style="width: 84%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small fw-bold mb-3">
+                    <span class="text-success">₹4,20,000 Raised</span>
+                    <span class="text-muted">Target: ₹5,00,000</span>
+                  </div>
+                  <button class="btn-pill-orange w-100 justify-content-center trigger-donation-modal" data-cause="Salem Flash Inundation Ward Food Drop">
+                    <i class="fa-solid fa-bolt me-1"></i> <span>Rush Aid Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-6">
+          <div class="cause-card-3d p-4 h-100 reveal-card reveal-right">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold">
+                <i class="fa-solid fa-clock me-1"></i> 2 Days Left
+              </span>
+              <span class="text-success fw-bold small"><i class="fa-solid fa-hospital me-1"></i> Hospital Partner</span>
+            </div>
+            <div class="row g-4">
+              <div class="col-md-5">
+                <img src="assets/cause_healthcare.webp" alt="Critical ICU Baby Care" class="rounded-4 w-100 h-100 object-fit-cover" style="min-height: 200px;">
+              </div>
+              <div class="col-md-7 d-flex flex-column justify-content-between">
+                <div>
+                  <h3 class="fw-bold fs-5 mb-2">NICU Incubators &amp; Surfactant Vials</h3>
+                  <p class="text-muted small mb-3">
+                    Critical respiratory therapy for 12 premature infants at Salem Medical College.
+                  </p>
+                </div>
+                <div>
+                  <div class="cause-progress-track mb-2">
+                    <div class="cause-progress-fill" style="width: 68%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small fw-bold mb-3">
+                    <span class="text-success">₹2,72,000 Raised</span>
+                    <span class="text-muted">Target: ₹4,00,000</span>
+                  </div>
+                  <button class="btn-pill-orange w-100 justify-content-center trigger-donation-modal" data-cause="NICU Incubators for Premature Infants">
+                    <i class="fa-solid fa-heart-pulse me-1"></i> <span>Fund Medicine</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-6">
+          <div class="cause-card-3d p-4 h-100 reveal-card reveal-left">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-info text-dark px-3 py-2 rounded-pill fw-bold">
+                <i class="fa-solid fa-clock me-1"></i> 5 Days Left
+              </span>
+              <span class="text-muted fw-bold small">Seasonal Drive</span>
+            </div>
+            <div class="row g-4">
+              <div class="col-md-5">
+                <img src="assets/cause_elderly.webp" alt="Winter Warmth Drive" class="rounded-4 w-100 h-100 object-fit-cover" style="min-height: 200px;">
+              </div>
+              <div class="col-md-7 d-flex flex-column justify-content-between">
+                <div>
+                  <h3 class="fw-bold fs-5 mb-2">1,500 Thermal Blankets for Elders</h3>
+                  <p class="text-muted small mb-3">
+                    Heavy insulated blankets for homeless seniors sleeping near Salem bus terminals.
+                  </p>
+                </div>
+                <div>
+                  <div class="cause-progress-track mb-2">
+                    <div class="cause-progress-fill" style="width: 52%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small fw-bold mb-3">
+                    <span class="text-success">₹1,56,000 Raised</span>
+                    <span class="text-muted">Target: ₹3,00,000</span>
+                  </div>
+                  <button class="btn-pill-orange w-100 justify-content-center trigger-donation-modal" data-cause="Thermal Blankets for Pavement Dwellers">
+                    <i class="fa-solid fa-gift me-1"></i> <span>Sponsor Blankets</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-6">
+          <div class="cause-card-3d p-4 h-100 reveal-card reveal-right">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-success text-white px-3 py-2 rounded-pill fw-bold">
+                <i class="fa-solid fa-check me-1"></i> 95% Funded
+              </span>
+              <span class="text-success fw-bold small">Final Milestone</span>
+            </div>
+            <div class="row g-4">
+              <div class="col-md-5">
+                <img src="assets/cause_water.webp" alt="Water Purification Station" class="rounded-4 w-100 h-100 object-fit-cover" style="min-height: 200px;">
+              </div>
+              <div class="col-md-7 d-flex flex-column justify-content-between">
+                <div>
+                  <h3 class="fw-bold fs-5 mb-2">Dharmapuri Border Village Solar RO Plant</h3>
+                  <p class="text-muted small mb-3">
+                    Only ₹25,000 left to complete the solar array for pure water for 200 households.
+                  </p>
+                </div>
+                <div>
+                  <div class="cause-progress-track mb-2">
+                    <div class="cause-progress-fill" style="width: 95%;"></div>
+                  </div>
+                  <div class="d-flex justify-content-between small fw-bold mb-3">
+                    <span class="text-success">₹4,75,000 Raised</span>
+                    <span class="text-muted">Target: ₹5,00,000</span>
+                  </div>
+                  <button class="btn-pill-orange w-100 justify-content-center trigger-donation-modal" data-cause="Dharmapuri Border Village Solar RO Plant">
+                    <i class="fa-solid fa-flag-checkered me-1"></i> <span>Complete This Goal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: #ffffff;">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow-orange justify-content-center">
+          <span class="hero-badge-line"></span>
+          <span>Salem Ward Coverage</span>
+          <span class="hero-badge-line"></span>
+        </div>
+        <h2 class="section-title-dark">Active Rapid Response Clusters</h2>
+        <p class="section-lead-p mx-auto" style="max-width: 620px;">
+          Our volunteer units operate on-ground across key disaster-vulnerable pockets in Salem and neighboring taluks.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="ward-response-card ward-img-card reveal-card reveal-bottom stagger-1">
+            <div class="ward-card-image-wrap">
+              <img src="assets/cause_disaster.webp" alt="Chinna Muniyappan Kovil Flood Zone" class="ward-card-img">
+              <div class="ward-card-img-overlay">
+                <span class="badge bg-danger text-white px-2 py-1 rounded-pill small">Cluster 01 • Urgent</span>
+              </div>
+              <div class="ward-hover-stats">
+                <div class="ward-stat"><i class="fa-solid fa-people-group me-1"></i> 2,400 Families</div>
+                <div class="ward-stat"><i class="fa-solid fa-box-open me-1"></i> 2,400 Ration Packets</div>
+                <div class="ward-stat"><i class="fa-solid fa-road-barrier me-1"></i> 800 Sandbags</div>
+              </div>
+            </div>
+            <div class="ward-card-body">
+              <h5 class="fw-bold mb-1">Chinna Muniyappan Kovil</h5>
+              <span class="text-muted small d-block mb-2">
+                <i class="fa-solid fa-user-shield me-1 text-success"></i> Suresh K. &nbsp;·&nbsp;
+                <i class="fa-solid fa-map-pin me-1 text-danger"></i> 4 Wards
+              </span>
+              <div class="ward-mini-progress mb-1"><div class="ward-mini-fill" style="width:100%; background: var(--orange-500);"></div></div>
+              <div class="d-flex justify-content-between small fw-semibold">
+                <span class="text-muted">Response</span>
+                <span class="text-success">100% Deployed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="ward-response-card ward-img-card reveal-card reveal-bottom stagger-2">
+            <div class="ward-card-image-wrap">
+              <img src="assets/cause_healthcare.webp" alt="Omalur Pediatric Healthcare" class="ward-card-img">
+              <div class="ward-card-img-overlay">
+                <span class="badge bg-warning text-dark px-2 py-1 rounded-pill small">Cluster 02 • Healthcare</span>
+              </div>
+              <div class="ward-hover-stats">
+                <div class="ward-stat"><i class="fa-solid fa-baby me-1"></i> 12 NICU Infants</div>
+                <div class="ward-stat"><i class="fa-solid fa-syringe me-1"></i> Surfactant Supplied</div>
+                <div class="ward-stat"><i class="fa-solid fa-hospital me-1"></i> Salem Medical College</div>
+              </div>
+            </div>
+            <div class="ward-card-body">
+              <h5 class="fw-bold mb-1">Omalur Pediatric Wing</h5>
+              <span class="text-muted small d-block mb-2">
+                <i class="fa-solid fa-user-shield me-1 text-success"></i> Dr. Priya S. &nbsp;·&nbsp;
+                <i class="fa-solid fa-baby me-1 text-warning"></i> 12 Infants
+              </span>
+              <div class="ward-mini-progress mb-1"><div class="ward-mini-fill" style="width:68%; background: #0ea5e9;"></div></div>
+              <div class="d-flex justify-content-between small fw-semibold">
+                <span class="text-muted">Fund Used</span>
+                <span class="text-primary">68% In Progress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="ward-response-card ward-img-card reveal-card reveal-bottom stagger-3">
+            <div class="ward-card-image-wrap">
+              <img src="assets/cause_elderly.webp" alt="Yercaud Elder Blanket Drive" class="ward-card-img">
+              <div class="ward-card-img-overlay">
+                <span class="badge bg-info text-dark px-2 py-1 rounded-pill small">Cluster 03 • Seasonal</span>
+              </div>
+              <div class="ward-hover-stats">
+                <div class="ward-stat"><i class="fa-solid fa-temperature-low me-1"></i> Nights: 11°C Avg</div>
+                <div class="ward-stat"><i class="fa-solid fa-shirt me-1"></i> 1,500 Blankets Staged</div>
+                <div class="ward-stat"><i class="fa-solid fa-mountain me-1"></i> Yercaud Foothills</div>
+              </div>
+            </div>
+            <div class="ward-card-body">
+              <h5 class="fw-bold mb-1">Yercaud Foothills Belt</h5>
+              <span class="text-muted small d-block mb-2">
+                <i class="fa-solid fa-user-shield me-1 text-success"></i> Deepika M. &nbsp;·&nbsp;
+                <i class="fa-solid fa-people-line me-1 text-info"></i> 1,500 Elders
+              </span>
+              <div class="ward-mini-progress mb-1"><div class="ward-mini-fill" style="width:52%; background: #06b6d4;"></div></div>
+              <div class="d-flex justify-content-between small fw-semibold">
+                <span class="text-muted">Distribution</span>
+                <span class="text-info">52% Staged</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="ward-response-card ward-img-card reveal-card reveal-bottom stagger-4">
+            <div class="ward-card-image-wrap">
+              <img src="assets/cause_water.webp" alt="Attur Solar RO Water Project" class="ward-card-img">
+              <div class="ward-card-img-overlay">
+                <span class="badge bg-success text-white px-2 py-1 rounded-pill small">Cluster 04 • Infrastructure</span>
+              </div>
+              <div class="ward-hover-stats">
+                <div class="ward-stat"><i class="fa-solid fa-solar-panel me-1"></i> Solar RO Plant</div>
+                <div class="ward-stat"><i class="fa-solid fa-house-chimney-water me-1"></i> 200 Households</div>
+                <div class="ward-stat"><i class="fa-solid fa-droplet me-1"></i> Fluoride-Free Water</div>
+              </div>
+            </div>
+            <div class="ward-card-body">
+              <h5 class="fw-bold mb-1">Attur Drought Pockets</h5>
+              <span class="text-muted small d-block mb-2">
+                <i class="fa-solid fa-user-shield me-1 text-success"></i> Arjun R. &nbsp;·&nbsp;
+                <i class="fa-solid fa-house me-1 text-success"></i> 200 Families
+              </span>
+              <div class="ward-mini-progress mb-1"><div class="ward-mini-fill" style="width:95%; background: #22c55e;"></div></div>
+              <div class="d-flex justify-content-between small fw-semibold">
+                <span class="text-muted">Completion</span>
+                <span class="text-success">95% Done</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: var(--color-cream-bg);">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow-orange justify-content-center">
+          <span class="hero-badge-line"></span>
+          <span>Rapid Response Standard</span>
+          <span class="hero-badge-line"></span>
+        </div>
+        <h2 class="section-title-dark">How We Mobilize Relief in Under 24 Hours</h2>
+        <p class="section-lead-p mx-auto" style="max-width: 600px;">
+          Structured protocols designed to prevent bottlenecks and deliver emergency aid directly to victims.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="rapid-step-card reveal-card reveal-bottom stagger-1">
+            <div class="rapid-step-img-wrap">
+              <img src="assets/pexels-tima-miroshnichenko-5439476.webp" alt="SOS Distress Intake" class="rapid-step-img">
+              <div class="rapid-step-number">01</div>
+              <div class="rapid-step-img-glow"></div>
+            </div>
+            <div class="rapid-step-body">
+              <div class="charivo-feature-icon orange mb-2">
+                <i class="fa-solid fa-bell-concierge"></i>
+              </div>
+              <span class="badge bg-dark text-white mb-2">Hour 0 – 2</span>
+              <h5 class="fw-bold mb-2">SOS Distress Intake</h5>
+              <ul class="rapid-step-checklist">
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>GPS location pinned</li>
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Photo evidence uploaded</li>
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Head-count verified</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="rapid-step-card reveal-card reveal-bottom stagger-2">
+            <div class="rapid-step-img-wrap">
+              <img src="assets/pexels-kampus-8204363.webp" alt="Medical and Need Triage" class="rapid-step-img">
+              <div class="rapid-step-number">02</div>
+              <div class="rapid-step-img-glow"></div>
+            </div>
+            <div class="rapid-step-body">
+              <div class="charivo-feature-icon teal mb-2">
+                <i class="fa-solid fa-stethoscope"></i>
+              </div>
+              <span class="badge bg-dark text-white mb-2">Hour 2 – 6</span>
+              <h5 class="fw-bold mb-2">Medical &amp; Need Triage</h5>
+              <ul class="rapid-step-checklist">
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Hospital bills verified</li>
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Priority tier assigned</li>
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Fund release approved</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="rapid-step-card reveal-card reveal-bottom stagger-3">
+            <div class="rapid-step-img-wrap">
+              <img src="assets/pexels-mart-production-7550362.webp" alt="Direct Merchant Dispatch" class="rapid-step-img">
+              <div class="rapid-step-number">03</div>
+              <div class="rapid-step-img-glow"></div>
+            </div>
+            <div class="rapid-step-body">
+              <div class="charivo-feature-icon orange mb-2">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <span class="badge bg-dark text-white mb-2">Hour 6 – 12</span>
+              <h5 class="fw-bold mb-2">Direct Merchant Dispatch</h5>
+              <ul class="rapid-step-checklist">
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Wholesale purchase direct</li>
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Vehicle loaded &amp; sealed</li>
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Live route tracked</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="rapid-step-card reveal-card reveal-bottom stagger-4">
+            <div class="rapid-step-img-wrap">
+              <img src="assets/pexels-mikael-blomkvist-6476259.webp" alt="GPS Proof and Receipt" class="rapid-step-img">
+              <div class="rapid-step-number">04</div>
+              <div class="rapid-step-img-glow"></div>
+            </div>
+            <div class="rapid-step-body">
+              <div class="charivo-feature-icon teal mb-2">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+              <span class="badge bg-dark text-white mb-2">Hour 12 – 24</span>
+              <h5 class="fw-bold mb-2">GPS Proof &amp; Receipt</h5>
+              <ul class="rapid-step-checklist">
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Timestamped photos</li>
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Beneficiary signature</li>
+                <li><i class="fa-solid fa-circle-check text-success me-2"></i>Donor report published</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: #ffffff;">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow-orange justify-content-center">
+          <span class="hero-badge-line"></span>
+          <span>Verified Milestones</span>
+          <span class="hero-badge-line"></span>
+        </div>
+        <h2 class="section-title-dark">Recently Concluded Rapid Relief Operations</h2>
+        <p class="section-lead-p mx-auto" style="max-width: 600px;">
+          Transparently audited campaigns whose objectives were 100% fulfilled by generous donors.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="cause-card-3d p-3 h-100 reveal-card reveal-bottom stagger-1">
+            <img src="assets/cause_kitchen.webp" alt="Emergency Kitchen" class="rounded-3 w-100 object-fit-cover mb-3" style="height: 180px;">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-success text-white">Completed</span>
+              <span class="text-muted small fw-bold">₹3,40,000 Disbursed</span>
+            </div>
+            <h5 class="fw-bold mb-2">Salem Pavement Flood Kitchen</h5>
+            <p class="text-muted small mb-0">Supplied 12,000 wholesome meals across 14 consecutive flood days in Chinna Thirupathi.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="cause-card-3d p-3 h-100 reveal-card reveal-bottom stagger-2">
+            <img src="assets/cause_education.webp" alt="School Kit Distribution" class="rounded-3 w-100 object-fit-cover mb-3" style="height: 180px;">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-success text-white">Completed</span>
+              <span class="text-muted small fw-bold">₹2,80,000 Disbursed</span>
+            </div>
+            <h5 class="fw-bold mb-2">Flood-Damaged School Textbooks</h5>
+            <p class="text-muted small mb-0">Replaced ruined textbooks, notebooks, and uniform sets for 450 government school students.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="cause-card-3d p-3 h-100 reveal-card reveal-bottom stagger-3">
+            <img src="assets/cause_healthcare.webp" alt="Mobile Clinic Mission" class="rounded-3 w-100 object-fit-cover mb-3" style="height: 180px;">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-success text-white">Completed</span>
+              <span class="text-muted small fw-bold">₹1,95,000 Disbursed</span>
+            </div>
+            <h5 class="fw-bold mb-2">Post-Monsoon Dengue Medical Camp</h5>
+            <p class="text-muted small mb-0">Tested and treated 820 rural children and distributed mosquito nets across 3 high-risk wards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-5 reveal-init" style="background-color: var(--color-cream-bg);">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-card reveal-left">
+          <div class="section-eyebrow-orange">
+            <span class="hero-badge-line"></span>
+            <span>Corporate Philanthropy</span>
+          </div>
+          <h2 class="section-title-dark">Double Your Relief: Salem CSR Matching Grants</h2>
+          <p class="section-lead-p">
+            Leading Salem industrial, textile, and technology enterprises collaborate with Stackly to match employee and public donations 1:1 during disaster declarations.
+          </p>
+          <ul class="list-unstyled d-flex flex-column gap-2 text-muted small mb-4">
+            <li><i class="fa-solid fa-circle-check text-success me-2"></i> Section 80G 50% Tax Deduction certificates for all CSR contributions</li>
+            <li><i class="fa-solid fa-circle-check text-success me-2"></i> Schedule VII compliant reporting with third-party auditor signatures</li>
+            <li><i class="fa-solid fa-circle-check text-success me-2"></i> Real-time branded impact microsite for participating corporate sponsors</li>
+          </ul>
+          <a href="contact.html" class="btn-pill-teal">
+            <span>Partner for CSR Matching</span>
+            <i class="fa-solid fa-handshake"></i>
+          </a>
+        </div>
+        <div class="col-lg-6 reveal-card reveal-right">
+          <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm text-center">
+            <div class="charivo-feature-icon orange mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.6rem;">
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">₹1,000 Donated = ₹2,000 Delivered</h4>
+            <p class="text-muted small mb-4">
+              When an emergency appeal is tagged with Corporate Match, our partner companies match your contribution rupee for rupee up to ₹10 Lakhs.
+            </p>
+            <button class="btn-pill-orange w-100 justify-content-center trigger-donation-modal" data-cause="General Community Fund">
+              <span>Donate to Matching Pool</span>
+              <i class="fa-solid fa-heart ms-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section-emergency-dispatch reveal-init">
+    <div class="container">
+      <div class="emergency-dispatch-banner reveal-card reveal-bottom">
+
+        
+        <img src="assets/join_us_person_cutout.webp" alt="Emergency Coordinator" class="emergency-dispatch-person d-none d-lg-block">
+
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+
+            <div class="emergency-dispatch-badge mb-3">
+              <i class="fa-solid fa-tower-broadcast me-2"></i> 24 / 7 LIVE DISPATCH
+            </div>
+
+            <h2 class="emergency-dispatch-title mb-2">Salem Emergency Distress Dispatch</h2>
+            <p class="emergency-dispatch-sub mb-4">
+              Report a critical village crisis or request emergency relief in Salem — our on-duty coordinator responds within minutes.
+            </p>
+
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <a href="404.html" class="btn-dispatch-dark">
+                <i class="fa-solid fa-phone me-2"></i>
+                <span>+91 98765 43210</span>
+              </a>
+              <a href="404.html" class="btn-dispatch-dark">
+                <i class="fa-brands fa-whatsapp me-2"></i>
+                <span>WhatsApp SOS</span>
+              </a>
+            </div>
+
+            <span class="d-block mt-3 emergency-dispatch-addr">
+              <i class="fa-solid fa-location-dot me-1"></i>
+              Chinna Thirupathi Emergency Operations Pod • Near Chinna Muniyappan Kovil, Salem
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="footer-charivo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand"><img src="assets/logo.webp" alt="Stackly"></div>
+          <p class="footer-desc">
+            Stackly is Salem’s verified community donation network. We connect genuine donors with verified grassroots causes with 100% photo-verified transparency and 80G tax exemptions.
+          </p>
+          <div class="footer-social-links">
+            <a href="404.html" class="footer-social-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="campaigns.html">Campaigns</a></li>
+            <li><a href="blog.html">Stories</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Account</h4>
+          <ul class="footer-links">
+            <li><a href="signin.html">Donor Login</a></li>
+            <li><a href="get-started.html">Create Account</a></li>
+            <li><a href="donor.html">Supporter Dashboard</a></li>
+            <li><a href="admin-dashboard.html">Admin Operations</a></li>
+            <li><a href="donations.html">80G Tax Receipts</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 footer-hq-col">
+          <h4 class="footer-heading">Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot footer-contact-icon"></i>
+            <div>
+              <strong>Stackly Community Foundation</strong><br>
+              MMR Complex, Chinna Thirupathi,<br>
+              near Chinna Muniyappan Kovil,<br>
+              Salem, Tamil Nadu 636008
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone footer-contact-icon"></i>
+            <div>+91 98765 43210 / 0427 245 8899</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope footer-contact-icon"></i>
+            <div>contact@thestackly.org</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-md-start mb-2 mb-md-0">
+            &copy; 2026 Stackly. All Rights Reserved. Reg NGO: SLM/2026/8892.
+          </div>
+          <div class="col-md-6 text-md-end">
+            <span>Designed for Salem Grassroots Communities • 100% Mobile &amp; Tablet Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  <div class="modal fade modal-charivo" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="donationModalLabel"><i class="fa-solid fa-heart text-warning me-2"></i> Fast Emergency Contribution</h5>
+            <small class="text-white-50">80G Tax Exemption Certificate Provided</small>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="donationFormModal">
+            <div class="form-group-custom">
+              <label class="form-label-custom" for="modalCauseSelect">Select Campaign</label>
+              <select class="d-none" id="modalCauseSelect" name="selectedCause">
+                <option value="Salem Flash Inundation Ward Food Drop" selected>Salem Flash Inundation Ward Food Drop</option>
+                <option value="NICU Incubators for Premature Infants">NICU Incubators for Premature Infants</option>
+                <option value="Thermal Blankets for Pavement Dwellers">Thermal Blankets for Pavement Dwellers</option>
+                <option value="Dharmapuri Border Village Solar RO Plant">Dharmapuri Border Village Solar RO Plant</option>
+              </select>
+              <div class="custom-cause-select-container" id="customCauseSelectBox">
+                <button type="button" class="custom-cause-trigger" id="customCauseTrigger" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="custom-cause-trigger-text" id="customCauseLabel">Salem Flash Inundation Ward Food Drop</span>
+                  <i class="fa-solid fa-chevron-down custom-cause-arrow"></i>
+                </button>
+                <div class="custom-cause-dropdown-menu" id="customCauseMenu" role="listbox">
+                  <div class="custom-cause-option active" role="option" data-value="Salem Flash Inundation Ward Food Drop" aria-selected="true">
+                    <span>Salem Flash Inundation Ward Food Drop</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                  <div class="custom-cause-option" role="option" data-value="NICU Incubators for Premature Infants" aria-selected="false">
+                    <span>NICU Incubators for Premature Infants</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                  <div class="custom-cause-option" role="option" data-value="Thermal Blankets for Pavement Dwellers" aria-selected="false">
+                    <span>Thermal Blankets for Pavement Dwellers</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                  <div class="custom-cause-option" role="option" data-value="Dharmapuri Border Village Solar RO Plant" aria-selected="false">
+                    <span>Dharmapuri Border Village Solar RO Plant</span>
+                    <i class="fa-solid fa-check option-check"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="preset-amount-grid">
+              <div class="preset-amt-btn" data-amt="500">₹500</div>
+              <div class="preset-amt-btn active" data-amt="1000">₹1,000</div>
+              <div class="preset-amt-btn" data-amt="2500">₹2,500</div>
+              <div class="preset-amt-btn" data-amt="5000">₹5,000</div>
+            </div>
+
+            <div class="form-group-custom">
+              <label class="form-label-custom" for="customAmountInput">Custom Amount (INR)</label>
+              <input type="number" class="form-control-custom" id="customAmountInput" value="1000" min="50" placeholder="Enter amount in ₹">
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-6"><input type="text" class="form-control-custom" id="donorNameInput" placeholder="Your Name" required></div>
+              <div class="col-6"><input type="email" class="form-control-custom" id="donorEmailInput" placeholder="Email for Receipt" required></div>
+            </div>
+
+            <button type="submit" class="btn-pill-orange w-100 justify-content-center py-3">
+              <span>Send Emergency Relief</span>
+              <i class="fa-solid fa-arrow-right ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="main.js"></script>
+</body>
+</html>

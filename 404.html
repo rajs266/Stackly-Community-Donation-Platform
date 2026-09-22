@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="page-404-html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Page Not Found (404) | Stackly Community Platform</title>
+  <link rel="icon" type="image/webp" href="assets/top-logo.webp">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    
+    html.page-404-html,
+    body.page-404-body {
+      height: 100% !important;
+      height: 100dvh !important;
+      max-height: 100dvh !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      position: fixed !important;
+      inset: 0 !important;
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      background: #03160e;
+    }
+
+    .error-viewport-wrapper {
+      position: relative;
+      height: 100% !important;
+      height: 100dvh !important;
+      max-height: 100dvh !important;
+      width: 100% !important;
+      overflow: hidden !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(12px, 3vh, 28px) 16px;
+      box-sizing: border-box;
+      background: radial-gradient(circle at 50% 30%, rgba(38, 143, 118, 0.45) 0%, rgba(7, 43, 28, 0.88) 50%, #03160e 100%),
+                  url('assets/pexels-mikael-blomkvist-6476261.webp') center / cover no-repeat;
+    }
+
+    
+    .ambient-sonar {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .ambient-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(38, 143, 118, 0.24);
+      animation: ambientPulse 4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+    .ambient-ring:nth-child(1) { width: 380px; height: 380px; animation-delay: 0s; }
+    .ambient-ring:nth-child(2) { width: 580px; height: 580px; animation-delay: 1.3s; }
+    .ambient-ring:nth-child(3) { width: 800px; height: 800px; animation-delay: 2.6s; }
+
+    @keyframes ambientPulse {
+      0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0.8; }
+      50% { opacity: 0.35; }
+      100% { transform: translate(-50%, -50%) scale(1.35); opacity: 0; }
+    }
+
+    
+    .error-card-delight {
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: clamp(24px, 4vh, 34px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(38, 143, 118, 0.28);
+      max-width: 660px;
+      width: min(660px, 94vw);
+      max-height: calc(100dvh - 24px);
+      padding: clamp(26px, 4.5vh, 46px) clamp(22px, 5vw, 54px);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      animation: cardPopIn 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @keyframes cardPopIn {
+      0% { opacity: 0; transform: scale(0.92) translateY(14px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    
+    .radar-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: #f0fdf4;
+      border: 1px solid rgba(22, 163, 74, 0.32);
+      color: #166534;
+      font-size: clamp(0.74rem, 1.4vh, 0.84rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: clamp(10px, 1.8vh, 16px);
+      box-shadow: 0 2px 8px rgba(34, 197, 94, 0.12);
+    }
+
+    .radar-ping-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #16a34a;
+      position: relative;
+    }
+    .radar-ping-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: rgba(22, 163, 74, 0.4);
+      animation: dotPulse 1.6s ease-out infinite;
+    }
+    @keyframes dotPulse {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    
+    .error-code-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 2.5vw, 22px);
+      margin-bottom: clamp(8px, 1.4vh, 14px);
+      line-height: 1;
+    }
+
+    .error-digit {
+      font-family: var(--font-heading, 'Outfit', sans-serif);
+      font-size: clamp(4rem, 9vh, 5.8rem);
+      font-weight: 900;
+      color: var(--teal-800, #0a4f3e);
+      letter-spacing: -0.04em;
+      user-select: none;
+      text-shadow: 0 4px 14px rgba(10, 79, 62, 0.16);
+    }
+
+    .compass-static-hub {
+      position: relative;
+      width: clamp(68px, 10vh, 88px);
+      height: clamp(68px, 10vh, 88px);
+      border-radius: 50%;
+      background: linear-gradient(145deg, #fff5eb, #fed7aa);
+      border: 3px solid var(--orange-500, #f97316);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 28px rgba(249, 115, 22, 0.28), inset 0 2px 5px rgba(255, 255, 255, 0.9);
+      user-select: none;
+      cursor: default;
+    }
+
+    .compass-needle {
+      font-size: clamp(2.2rem, 5.2vh, 2.9rem);
+      color: var(--orange-500, #ea580c);
+      display: block;
+      pointer-events: none;
+    }
+
+    
+    .error-title-main {
+      font-family: var(--font-heading, 'Outfit', sans-serif);
+      font-size: clamp(1.4rem, 3vh, 1.95rem);
+      font-weight: 800;
+      color: #0f172a !important;
+      margin: 0 0 clamp(6px, 1vh, 10px) 0;
+      line-height: 1.25;
+    }
+
+    .error-desc-text {
+      color: #475569 !important;
+      font-size: clamp(0.88rem, 1.7vh, 1.02rem);
+      line-height: 1.55;
+      margin: 0 auto clamp(16px, 2.5vh, 26px);
+      max-width: 480px;
+    }
+
+    
+    .error-btn-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 2vw, 18px);
+      flex-wrap: wrap;
+      margin-bottom: clamp(16px, 2.5vh, 24px);
+      width: 100%;
+    }
+
+    .error-btn-group .btn-pill-orange,
+    .error-btn-group .btn-pill-teal {
+      padding: clamp(11px, 1.8vh, 14px) clamp(22px, 3.5vw, 32px) !important;
+      font-size: clamp(0.88rem, 1.7vh, 0.98rem) !important;
+      font-weight: 700 !important;
+      border-radius: 999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border: none !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    .error-btn-group .btn-pill-orange:hover,
+    .error-btn-group .btn-pill-teal:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18) !important;
+    }
+    .error-btn-group .btn-pill-orange:active,
+    .error-btn-group .btn-pill-teal:active {
+      transform: translateY(0) !important;
+    }
+
+    
+    .error-footer-text {
+      border-top: 1px solid #e2e8f0;
+      padding-top: clamp(10px, 1.8vh, 16px);
+      font-size: clamp(0.72rem, 1.4vh, 0.8rem);
+      color: #64748b;
+      width: 100%;
+      margin: 0;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body class="page-404-body">
+  
+  <div class="stackly-preloader" id="stacklyPreloader">
+    <div class="preloader-inner">
+      <div class="preloader-pulse-ring"></div>
+      <div class="preloader-heart-icon">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+      </div>
+      <div class="preloader-brand">
+        <span class="brand-text">STACKLY</span>
+        <span class="brand-sub">Community Foundation • Salem</span>
+      </div>
+      <div class="preloader-prog-bar">
+        <div class="preloader-prog-fill" id="preloaderProgFill"></div>
+      </div>
+      <div class="preloader-status" id="preloaderStatus">Recalibrating Navigation Coordinates...</div>
+    </div>
+  </div>
+
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  
+  <main class="error-viewport-wrapper">
+    
+    <div class="ambient-sonar" aria-hidden="true">
+      <div class="ambient-ring"></div>
+      <div class="ambient-ring"></div>
+      <div class="ambient-ring"></div>
+    </div>
+
+    
+    <div class="error-card-delight">
+      
+      <div class="radar-status-badge">
+        <span class="radar-ping-dot"></span>
+        <span>Salem Field Dispatch • Route Detour</span>
+      </div>
+
+      
+      <div class="error-code-row">
+        <span class="error-digit">4</span>
+        <div class="compass-static-hub" aria-hidden="true">
+          <i class="fa-solid fa-compass compass-needle"></i>
+        </div>
+        <span class="error-digit">4</span>
+      </div>
+
+      
+      <h1 class="error-title-main">Page Wandered Off</h1>
+
+      
+      <p class="error-desc-text">
+        The community drive or page you're searching for might have concluded or relocated. Even the most generous hearts take a scenic turn in Salem!
+      </p>
+
+      
+      <div class="error-btn-group">
+        <button type="button" class="btn-pill-orange" onclick="handleGoBack()" id="btnGoBack">
+          <i class="fa-solid fa-arrow-left me-2"></i> Go Back
+        </button>
+        <a href="index.html" class="btn-pill-teal">
+          <i class="fa-solid fa-house me-2"></i> Return Home
+        </a>
+      </div>
+
+      
+      <p class="error-footer-text">
+        Stackly Community Foundation • MMR Complex, Chinna Thirupathi, Salem - 636008
+      </p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+
+  <script>
+    
+    function handleGoBack() {
+      if (document.referrer && window.history.length > 1) {
+        window.history.back();
+      } else {
+        const userRole = localStorage.getItem('userRole') || '';
+        if (userRole.toLowerCase().includes('admin')) {
+          window.location.href = 'admin-dashboard.html';
+        } else {
+          window.location.href = 'donor.html';
+        }
+      }
+    }
+
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY !== 0) window.scrollTo(0, 0);
+    }, { passive: false });
+  </script>
+</body>
+</html>

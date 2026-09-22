@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Admin Command Suite | Stackly Salem HQ</title>
+  <meta name="description" content="Salem administrative operations — review grassroots campaigns, verify disbursements, manage 80G donor statements, and oversee field staff.">
+  <link rel="icon" type="image/webp" href="assets/top-logo.webp">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-page dash-page-admin">
+
+  
+  <div class="stackly-preloader" id="stacklyPreloader">
+    <div class="preloader-inner">
+      <div class="preloader-pulse-ring"></div>
+      <div class="preloader-heart-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="preloader-brand">
+        <span class="brand-text">STACKLY</span>
+        <span class="brand-sub">Admin Command Suite • Salem</span>
+      </div>
+      <div class="preloader-prog-bar"><div class="preloader-prog-fill" id="preloaderProgFill"></div></div>
+      <div class="preloader-status" id="preloaderStatus">Loading Operations Dashboard...</div>
+    </div>
+  </div>
+
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  
+  <div class="dash-sidebar-overlay" id="dashOverlay"></div>
+
+  
+  <aside class="dash-sidebar" id="dashSidebar" aria-label="Admin navigation">
+    <div class="dash-sidebar__user">
+      <div class="dash-sidebar__avatar" id="dashUserAvatar">A</div>
+      <div class="min-w-0">
+        <div class="dash-sidebar__name" id="dashUserName">Salem Admin</div>
+        <div class="dash-sidebar__email" id="dashUserEmail">ops.salem@thestackly.org</div>
+      </div>
+    </div>
+
+    <span class="dash-sidebar__role"><i class="fa-solid fa-shield-halved"></i> Platform Admin</span>
+
+    <nav class="dash-sidebar__nav">
+      <div class="dash-sidebar__label">Overview</div>
+      <button type="button" class="dash-sidebar__link active" data-section="overview">
+        <i class="fa-solid fa-chart-pie"></i> Operations Overview
+      </button>
+
+      <div class="dash-sidebar__label">Operations</div>
+      <button type="button" class="dash-sidebar__link" data-section="approvals">
+        <i class="fa-solid fa-clipboard-check"></i> Cause Approvals
+      </button>
+      <button type="button" class="dash-sidebar__link" data-section="drives">
+        <i class="fa-solid fa-layer-group"></i> Active Drives
+      </button>
+      <button type="button" class="dash-sidebar__link" data-section="disbursements">
+        <i class="fa-solid fa-vault"></i> Disbursements
+      </button>
+      <button type="button" class="dash-sidebar__link" data-section="analytics">
+        <i class="fa-solid fa-chart-line"></i> Financial Analytics
+      </button>
+
+      <div class="dash-sidebar__label">People</div>
+      <button type="button" class="dash-sidebar__link" data-section="donors">
+        <i class="fa-solid fa-users"></i> Donor Directory
+      </button>
+      <button type="button" class="dash-sidebar__link" data-section="staff">
+        <i class="fa-solid fa-id-badge"></i> Field Staff
+      </button>
+    </nav>
+
+    <a href="signin.html" class="dash-sidebar__logout" id="dashLogout">
+      <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+    </a>
+  </aside>
+
+  
+  <header class="dash-topbar">
+    <div class="dash-topbar__left">
+      <div class="dash-topbar__logo-zone">
+        <button type="button" id="dashMenuToggle" class="dash-topbar__menu" aria-label="Open menu" aria-expanded="false" aria-controls="dashSidebar">
+          <span class="menu-icon" aria-hidden="true"><i class="fa-solid fa-bars"></i></span>
+          <span class="close-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+        </button>
+        <a href="index.html" class="dash-topbar__logo">
+          <img src="assets/logo.webp" alt="Stackly">
+        </a>
+        <div class="dash-topbar__divider" aria-hidden="true"></div>
+      </div>
+      <div class="dash-topbar__welcome">
+        <h1>Salem HQ, <span id="dashWelcomeName">Admin</span></h1>
+        <p>Live field ops · disbursements · 4 PM window</p>
+      </div>
+    </div>
+    <div class="dash-topbar__right">
+      <a href="index.html" class="dash-topbar__home"><i class="fa-solid fa-house"></i> <span>Public Site</span></a>
+      <a href="404.html" class="dash-topbar__bell" title="Notifications" aria-label="Notifications">
+        <i class="fa-solid fa-bell"></i><span class="dot"></span>
+      </a>
+      <div class="dash-topbar__chip">
+        <div class="dash-topbar__chip-avatar" id="dashTopbarAvatar">A</div>
+        <div class="dash-topbar__chip-meta">
+          <strong id="dashTopbarName">Admin</strong>
+          <span id="dashTopbarEmail">ops.salem@thestackly.org</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+  <main class="dash-main">
+
+    
+    <div class="dash-ops-banner mb-4">
+      <div>
+        <span class="dash-eyebrow">FIELD NETWORK / LIVE</span>
+        <h2>Salem impact operations are on track.</h2>
+        <p>Two field verifications need an audit decision before today's 4 PM disbursement window.</p>
+      </div>
+      <div class="dash-ops-banner__signal">
+        <i class="fa-solid fa-satellite-dish"></i>
+        <strong>99.4%</strong>
+        <span>direct deployment</span>
+      </div>
+    </div>
+
+    
+    <section class="dash-section active" id="section-overview">
+
+      
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-xl-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--teal"><i class="fa-solid fa-vault"></i></div>
+              <div>
+                <div class="text-muted small">Total Mobilized</div>
+                <div class="fs-4 fw-bold">₹4.85 Cr</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--gold"><i class="fa-solid fa-bullhorn"></i></div>
+              <div>
+                <div class="text-muted small">Active Causes</div>
+                <div class="fs-4 fw-bold">18 Verified</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--purple"><i class="fa-solid fa-user-group"></i></div>
+              <div>
+                <div class="text-muted small">Registered Donors</div>
+                <div class="fs-4 fw-bold">3,520</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--blue"><i class="fa-solid fa-hourglass-half"></i></div>
+              <div>
+                <div class="text-muted small">Pending Approvals</div>
+                <div class="fs-4 fw-bold">2 Drives</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row g-4 mb-4">
+        <div class="col-lg-7">
+          <div class="dash-card h-100">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold mb-0"><i class="fa-solid fa-chart-area me-2" style="color:var(--teal-400);"></i> Monthly Donation Velocity (₹ Lakhs)</h5>
+              <span class="badge bg-success">FY 2026-27</span>
+            </div>
+            <div style="height: 260px; position: relative;">
+              <canvas id="adminDonationChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="dash-card h-100">
+            <h5 class="fw-bold mb-3"><i class="fa-solid fa-hourglass-half me-2" style="color:var(--amber-500);"></i> Pending Field Verifications</h5>
+            <div class="p-3 rounded-3 mb-3" style="background: rgba(255,164,27,.08); border: 1px solid rgba(255,164,27,.25);">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="fw-bold mb-0">Ayothiyapattinam Primary Health RO</h6>
+                <span class="badge bg-warning">Audit Review</span>
+              </div>
+              <small class="text-muted d-block mb-2">Dr. Priya Soundararajan · ₹3,20,000</small>
+              <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-success rounded-pill px-3" onclick="window.location.href='404.html'">
+                  <i class="fa-solid fa-check me-1"></i> Approve
+                </button>
+                <button class="btn btn-sm btn-outline-danger rounded-pill px-3" onclick="window.location.href='404.html'">Reject</button>
+              </div>
+            </div>
+            <div class="p-3 rounded-3" style="background: rgba(255,164,27,.08); border: 1px solid rgba(255,164,27,.25);">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="fw-bold mb-0">Yercaud Tribal Winter Sweaters</h6>
+                <span class="badge bg-warning">Estimate Check</span>
+              </div>
+              <small class="text-muted d-block mb-2">Suresh Kandasamy · ₹1,80,000</small>
+              <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-success rounded-pill px-3" onclick="window.location.href='404.html'">
+                  <i class="fa-solid fa-check me-1"></i> Approve
+                </button>
+                <button class="btn btn-sm btn-outline-danger rounded-pill px-3" onclick="window.location.href='404.html'">Reject</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row g-4 mb-4">
+        <div class="col-md-6">
+          <div class="dash-field-card">
+            <img src="assets/cause_water.webp" alt="Solar water station field operation">
+            <div>
+              <span class="dash-eyebrow">FIELD HUB / YERCAUD</span>
+              <h6>Water Station Audit Trail</h6>
+              <p>GPS proof received from the morning installation round. Solar borewell active since 08:30 AM.</p>
+              <span class="dash-status-chip"><i class="fa-solid fa-check"></i> Verified 08:45</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dash-field-card">
+            <img src="assets/cause_nutrition.webp" alt="Community nutrition distribution">
+            <div>
+              <span class="dash-eyebrow">DISPATCH / SALEM</span>
+              <h6>Kitchen Batch Cleared</h6>
+              <p>450 meals reconciled against vendor voucher. Chinna Thirupathi school delivery confirmed.</p>
+              <span class="dash-status-chip dash-status-chip--amber"><i class="fa-solid fa-clock"></i> Reconcile by 16:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="dash-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="fw-bold mb-0"><i class="fa-solid fa-receipt me-2" style="color:var(--teal-400);"></i> Recent Vendor Disbursements &amp; Direct Vouchers</h5>
+          <span class="badge bg-success">Zero Cash Protocol</span>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th>Voucher #</th>
+                <th>Vendor / Payee</th>
+                <th>Cause Category</th>
+                <th>Amount</th>
+                <th>Audit Proof</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>VCH-SLM-9921</code></td>
+                <td class="fw-semibold">Salem Wholesale Rice &amp; Pulses Depot</td>
+                <td>Hunger Relief (Kitchen Batch)</td>
+                <td class="fw-bold">₹1,45,000</td>
+                <td><span class="badge bg-secondary"><i class="fa-solid fa-image me-1"></i> GST Bill</span></td>
+                <td><span class="badge bg-success">Bank Settled</span></td>
+              </tr>
+              <tr>
+                <td><code>VCH-SLM-9920</code></td>
+                <td class="fw-semibold">AquaTech Borewell &amp; Solar Systems</td>
+                <td>Clean Water Filtration</td>
+                <td class="fw-bold">₹2,80,000</td>
+                <td><span class="badge bg-secondary"><i class="fa-solid fa-location-dot me-1"></i> GPS Tagged</span></td>
+                <td><span class="badge bg-success">Bank Settled</span></td>
+              </tr>
+              <tr>
+                <td><code>VCH-SLM-9919</code></td>
+                <td class="fw-semibold">Sri Gokulam Hospital Trust (NICU)</td>
+                <td>Emergency Healthcare Fund</td>
+                <td class="fw-bold">₹3,50,000</td>
+                <td><span class="badge bg-secondary"><i class="fa-solid fa-hospital me-1"></i> Case #491</span></td>
+                <td><span class="badge bg-success">Bank Settled</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-approvals">
+      <div class="dash-welcome-banner mb-4">
+        <span class="badge bg-warning mb-2"><i class="fa-solid fa-clipboard-check me-1"></i> Approval Queue</span>
+        <h2>Grassroots Drive Approvals</h2>
+        <p>Review and authorize grassroots campaigns submitted by certified Salem field coordinators. All approved drives go live on the public portal immediately.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card d-flex flex-column">
+            <img src="assets/cause_healthcare.webp" alt="Healthcare campaign">
+            <div class="p-3 d-flex flex-column flex-grow-1">
+              <span class="badge bg-warning mb-2">Audit Review</span>
+              <h6 class="fw-bold mb-1">Ayothiyapattinam Primary Health RO</h6>
+              <div class="small text-muted mb-2">Dr. Priya Soundararajan · ₹3,20,000 target</div>
+              <p class="small text-muted mb-3 flex-grow-1">Solar-powered reverse osmosis water purification for 800 daily beneficiaries in Ayothiyapattinam ward.</p>
+              <div class="d-flex gap-2 mt-auto">
+                <button class="btn btn-sm btn-success flex-fill" onclick="window.location.href='404.html'"><i class="fa-solid fa-check me-1"></i> Approve</button>
+                <button class="btn btn-sm btn-outline-danger flex-fill" onclick="window.location.href='404.html'">Reject</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card d-flex flex-column">
+            <img src="assets/cause_elderly.webp" alt="Elderly welfare campaign">
+            <div class="p-3 d-flex flex-column flex-grow-1">
+              <span class="badge bg-warning mb-2">Estimate Check</span>
+              <h6 class="fw-bold mb-1">Yercaud Tribal Winter Sweaters</h6>
+              <div class="small text-muted mb-2">Suresh Kandasamy · ₹1,80,000 target</div>
+              <p class="small text-muted mb-3 flex-grow-1">Woolen sweaters and blankets for 340 tribal elders in Yercaud foothills ahead of winter season.</p>
+              <div class="d-flex gap-2 mt-auto">
+                <button class="btn btn-sm btn-success flex-fill" onclick="window.location.href='404.html'"><i class="fa-solid fa-check me-1"></i> Approve</button>
+                <button class="btn btn-sm btn-outline-danger flex-fill" onclick="window.location.href='404.html'">Reject</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card d-flex flex-column">
+            <img src="assets/cause_education.webp" alt="Education campaign">
+            <div class="p-3 d-flex flex-column flex-grow-1">
+              <span class="badge bg-info mb-2">New Submission</span>
+              <h6 class="fw-bold mb-1">Digital Tablets for Rural Girls</h6>
+              <div class="small text-muted mb-2">Deepika Rajan · ₹4,50,000 target</div>
+              <p class="small text-muted mb-3 flex-grow-1">50 Android tablets with offline learning content for girl students in 3 panchayat schools near Namakkal.</p>
+              <div class="d-flex gap-2 mt-auto">
+                <button class="btn btn-sm btn-success flex-fill" onclick="window.location.href='404.html'"><i class="fa-solid fa-check me-1"></i> Approve</button>
+                <button class="btn btn-sm btn-outline-danger flex-fill" onclick="window.location.href='404.html'">Reject</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-card mt-4">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <i class="fa-solid fa-info-circle" style="color:var(--teal-400);"></i>
+          <span class="small text-muted">All approved campaigns will immediately go live on the public donation portal and mobile app.</span>
+        </div>
+        <p class="small text-muted mb-0">Approval history and audit log are available in the Financial Analytics section.</p>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-drives">
+      <div class="dash-welcome-banner mb-4">
+        <span class="badge bg-success mb-2"><i class="fa-solid fa-layer-group me-1"></i> Live Drives</span>
+        <h2>Active Fundraising Drives</h2>
+        <p>Monitor real-time fundraising progress, emergency priority tags, and disbursement pacing for all active campaigns across Salem and Namakkal.</p>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_kitchen.webp" alt="Kitchen drive">
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="fw-bold mb-0">Daily Nutrition for 450 Children</h6>
+                <span class="badge bg-warning">Priority</span>
+              </div>
+              <div class="small text-muted mb-2">Target: ₹5,00,000</div>
+              <div class="d-flex justify-content-between small mb-1">
+                <span class="text-muted">Collected</span>
+                <strong style="color:var(--teal-400);">₹3,90,000</strong>
+              </div>
+              <div class="progress mb-2" style="height:6px; background:rgba(38,143,118,.15);">
+                <div class="progress-bar" style="width:78%; background:linear-gradient(90deg,var(--teal-500),var(--teal-300));"></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">78% reached</small>
+                <button class="btn btn-sm btn-stackly-outline py-0 px-2" onclick="window.location.href='404.html'">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_education.webp" alt="Education drive">
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="fw-bold mb-0">School Kits &amp; Digital Tabs</h6>
+                <span class="badge bg-success">Active</span>
+              </div>
+              <div class="small text-muted mb-2">Target: ₹3,00,000</div>
+              <div class="d-flex justify-content-between small mb-1">
+                <span class="text-muted">Collected</span>
+                <strong style="color:var(--teal-400);">₹1,92,000</strong>
+              </div>
+              <div class="progress mb-2" style="height:6px; background:rgba(38,143,118,.15);">
+                <div class="progress-bar" style="width:64%; background:linear-gradient(90deg,var(--teal-500),var(--amber-500));"></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">64% reached</small>
+                <button class="btn btn-sm btn-stackly-outline py-0 px-2" onclick="window.location.href='404.html'">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_water.webp" alt="Water drive">
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="fw-bold mb-0">Solar Borewell Stations</h6>
+                <span class="badge bg-info">Scaling</span>
+              </div>
+              <div class="small text-muted mb-2">Target: ₹8,00,000</div>
+              <div class="d-flex justify-content-between small mb-1">
+                <span class="text-muted">Collected</span>
+                <strong style="color:var(--teal-400);">₹6,40,000</strong>
+              </div>
+              <div class="progress mb-2" style="height:6px; background:rgba(38,143,118,.15);">
+                <div class="progress-bar" style="width:80%; background:linear-gradient(90deg,var(--teal-400),var(--teal-600));"></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">80% reached</small>
+                <button class="btn btn-sm btn-stackly-outline py-0 px-2" onclick="window.location.href='404.html'">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_disaster.webp" alt="Disaster relief">
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="fw-bold mb-0">Flood Relief Rations</h6>
+                <span class="badge bg-danger">Emergency</span>
+              </div>
+              <div class="small text-muted mb-2">Target: ₹2,50,000</div>
+              <div class="d-flex justify-content-between small mb-1">
+                <span class="text-muted">Collected</span>
+                <strong style="color:var(--orange-400);">₹2,10,000</strong>
+              </div>
+              <div class="progress mb-2" style="height:6px; background:rgba(239,68,68,.15);">
+                <div class="progress-bar" style="width:84%; background:linear-gradient(90deg,#ef4444,#f97316);"></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">84% — urgent</small>
+                <button class="btn btn-sm btn-stackly-outline py-0 px-2" onclick="window.location.href='404.html'">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_healthcare.webp" alt="Healthcare drive">
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="fw-bold mb-0">Emergency Pediatric Surgeries</h6>
+                <span class="badge bg-success">Active</span>
+              </div>
+              <div class="small text-muted mb-2">Target: ₹6,00,000</div>
+              <div class="d-flex justify-content-between small mb-1">
+                <span class="text-muted">Collected</span>
+                <strong style="color:var(--teal-400);">₹2,80,000</strong>
+              </div>
+              <div class="progress mb-2" style="height:6px; background:rgba(38,143,118,.15);">
+                <div class="progress-bar" style="width:47%; background:linear-gradient(90deg,var(--teal-500),var(--amber-500));"></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">47% reached</small>
+                <button class="btn btn-sm btn-stackly-outline py-0 px-2" onclick="window.location.href='404.html'">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_elderly.webp" alt="Elderly drive">
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <h6 class="fw-bold mb-0">Monthly Rations for Elders</h6>
+                <span class="badge bg-success">Active</span>
+              </div>
+              <div class="small text-muted mb-2">Target: ₹1,50,000 / month</div>
+              <div class="d-flex justify-content-between small mb-1">
+                <span class="text-muted">This month</span>
+                <strong style="color:var(--teal-400);">₹1,20,000</strong>
+              </div>
+              <div class="progress mb-2" style="height:6px; background:rgba(38,143,118,.15);">
+                <div class="progress-bar" style="width:80%; background:linear-gradient(90deg,var(--teal-500),var(--teal-300));"></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">80% monthly</small>
+                <button class="btn btn-sm btn-stackly-outline py-0 px-2" onclick="window.location.href='404.html'">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-disbursements">
+      <h2 class="fw-bold mb-1">Vendor Disbursements</h2>
+      <p class="text-muted mb-4">Zero-cash protocol — every rupee goes directly to verified vendors with GST bills, GPS geotagging, and beneficiary photos.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--teal"><i class="fa-solid fa-money-bill-transfer"></i></div>
+              <div><div class="text-muted small">This Month</div><div class="fs-4 fw-bold">₹18.2 L</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--gold"><i class="fa-solid fa-receipt"></i></div>
+              <div><div class="text-muted small">Vouchers Issued</div><div class="fs-4 fw-bold">47</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--purple"><i class="fa-solid fa-check-double"></i></div>
+              <div><div class="text-muted small">Audit Verified</div><div class="fs-4 fw-bold">45 / 47</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--blue"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <div><div class="text-muted small">Pending Proof</div><div class="fs-4 fw-bold">2</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="fw-bold mb-0">Complete Disbursement Ledger</h5>
+          <button class="btn btn-sm btn-stackly-outline" onclick="alert('Export coming soon')"><i class="fa-solid fa-file-csv me-1"></i> Export CSV</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th>Voucher #</th>
+                <th>Vendor / Payee</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Audit Proof</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>VCH-SLM-9921</code></td><td class="fw-semibold">Salem Wholesale Rice &amp; Pulses Depot</td><td>Hunger Relief</td><td class="fw-bold">₹1,45,000</td><td><span class="badge bg-secondary">GST Bill</span></td><td><span class="badge bg-success">Bank Settled</span></td></tr>
+              <tr><td><code>VCH-SLM-9920</code></td><td class="fw-semibold">AquaTech Borewell &amp; Solar Systems</td><td>Clean Water</td><td class="fw-bold">₹2,80,000</td><td><span class="badge bg-secondary">GPS Tagged</span></td><td><span class="badge bg-success">Bank Settled</span></td></tr>
+              <tr><td><code>VCH-SLM-9919</code></td><td class="fw-semibold">Sri Gokulam Hospital Trust</td><td>Emergency Healthcare</td><td class="fw-bold">₹3,50,000</td><td><span class="badge bg-secondary">Case File</span></td><td><span class="badge bg-success">Bank Settled</span></td></tr>
+              <tr><td><code>VCH-SLM-9918</code></td><td class="fw-semibold">Namakkal Uniform Tailoring Co-op</td><td>School Kits</td><td class="fw-bold">₹88,000</td><td><span class="badge bg-secondary">Photo Proof</span></td><td><span class="badge bg-success">Bank Settled</span></td></tr>
+              <tr><td><code>VCH-SLM-9917</code></td><td class="fw-semibold">Yercaud Weavers Collective</td><td>Tribal Welfare</td><td class="fw-bold">₹62,000</td><td><span class="badge bg-warning">Pending</span></td><td><span class="badge bg-warning">Proof Awaited</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-analytics">
+      <h2 class="fw-bold mb-1">Financial Analytics</h2>
+      <p class="text-muted mb-4">Resource allocation audit — Stackly Salem operates on a 99.4% direct deployment standard.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+          <div class="dash-report-metric">
+            <span>Month Revenue</span>
+            <strong>₹4.85 Cr</strong>
+            <em>+14% MoM</em>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="dash-report-metric">
+            <span>Deployment Rate</span>
+            <strong>99.4%</strong>
+            <em>Direct</em>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="dash-report-metric">
+            <span>Avg Cause Value</span>
+            <strong>₹2.7 L</strong>
+            <em>Verified</em>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="dash-report-metric">
+            <span>Vendor Payouts</span>
+            <strong>₹3.14 Cr</strong>
+            <em>Cleared</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="dash-card text-center">
+            <div class="mb-2" style="font-size:2rem; color:var(--teal-400);"><i class="fa-solid fa-bowl-food"></i></div>
+            <h3 class="fw-bold mb-1" style="color:var(--teal-400);">45%</h3>
+            <span class="small text-muted">Daily Nutrition &amp; Kitchens</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="dash-card text-center">
+            <div class="mb-2" style="font-size:2rem; color:#60a5fa;"><i class="fa-solid fa-faucet"></i></div>
+            <h3 class="fw-bold mb-1" style="color:#60a5fa;">25%</h3>
+            <span class="small text-muted">Solar Borewells &amp; RO</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="dash-card text-center">
+            <div class="mb-2" style="font-size:2rem; color:var(--amber-500);"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3 class="fw-bold mb-1" style="color:var(--amber-500);">20%</h3>
+            <span class="small text-muted">School Kits &amp; Digital Labs</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="dash-card text-center">
+            <div class="mb-2" style="font-size:2rem; color:#f87171;"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3 class="fw-bold mb-1" style="color:#f87171;">10%</h3>
+            <span class="small text-muted">Emergency &amp; Surgeries</span>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="dash-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold mb-0"><i class="fa-solid fa-chart-area me-2" style="color:var(--teal-400);"></i> Monthly Donations (₹ Lakhs)</h5>
+              <span class="badge bg-success">Apr–Sep 2026</span>
+            </div>
+            <div style="height:250px; position:relative;">
+              <canvas id="adminAnalyticsChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="dash-card h-100">
+            <h5 class="fw-bold mb-3">Top Cause Categories</h5>
+            <div class="dash-faq-item"><strong>Nutrition &amp; Kitchens · ₹2.18 Cr</strong><span>45% of month total · 4 active drives</span></div>
+            <div class="dash-faq-item"><strong>Clean Water · ₹1.21 Cr</strong><span>25% · 3 borewell stations commissioned</span></div>
+            <div class="dash-faq-item"><strong>Education · ₹97 L</strong><span>20% · Namakkal + Yercaud schools</span></div>
+            <div class="dash-faq-item"><strong>Emergency Healthcare · ₹49 L</strong><span>10% · NICU + pediatric surgeries</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-donors">
+      <h2 class="fw-bold mb-1">Salem Supporter Directory</h2>
+      <p class="text-muted mb-4">3,520 registered donors across Salem, Namakkal, and Yercaud regions.</p>
+
+      <div class="dash-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="fw-bold mb-0">Verified Donor Ledger</h5>
+          <button class="btn btn-sm btn-stackly-outline" onclick="alert('Export coming soon')"><i class="fa-solid fa-file-export me-1"></i> Export</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th>Donor Name</th>
+                <th>Email</th>
+                <th>Total Contributed</th>
+                <th>80G Receipts</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="fw-semibold">Dr. K. Anbarasan</td><td class="text-muted">anbarasan.med@gmail.com</td><td class="fw-bold" style="color:var(--teal-400);">₹45,000</td><td>8 Certificates</td><td><span class="badge bg-success">Verified</span></td></tr>
+              <tr><td class="fw-semibold">Selvarani M.</td><td class="text-muted">selvarani.salem@yahoo.com</td><td class="fw-bold" style="color:var(--teal-400);">₹12,500</td><td>3 Certificates</td><td><span class="badge bg-success">Verified</span></td></tr>
+              <tr><td class="fw-semibold">Karthikeyan Raja</td><td class="text-muted">karthik.raja91@gmail.com</td><td class="fw-bold" style="color:var(--teal-400);">₹28,000</td><td>6 Certificates</td><td><span class="badge bg-success">Verified</span></td></tr>
+              <tr><td class="fw-semibold">Meenakshi Sundaram</td><td class="text-muted">meena.s@outlook.com</td><td class="fw-bold" style="color:var(--teal-400);">₹8,500</td><td>2 Certificates</td><td><span class="badge bg-success">Verified</span></td></tr>
+              <tr><td class="fw-semibold">Venkatesan P.</td><td class="text-muted">venkat.priya@rediffmail.com</td><td class="fw-bold" style="color:var(--amber-500);">₹5,000</td><td>1 Certificate</td><td><span class="badge bg-warning">PAN Pending</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-staff">
+      <h2 class="fw-bold mb-1">Field Staff &amp; Volunteer Leads</h2>
+      <p class="text-muted mb-4">Stationed across Chinna Thirupathi, Namakkal, and Yercaud foothills.</p>
+
+      <div class="row g-4">
+        <div class="col-6 col-xl-4">
+          <div class="staff-flip-card">
+            <img src="assets/team_arjun.webp" alt="Arjun Ramanathan" class="staff-flip-img">
+            <div class="staff-flip-overlay">
+              <span class="badge bg-success mb-2">On Duty</span>
+              <h5 class="staff-flip-name">Arjun Ramanathan</h5>
+              <div class="staff-flip-role">Salem Operations Supervisor</div>
+              <div class="staff-flip-divider"></div>
+              <div class="staff-flip-info">
+                <i class="fa-solid fa-tower-broadcast"></i>
+                <div>
+                  <strong>Command Desk</strong>
+                  <span>Approvals · partner escalations · Ext. 201</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-4">
+          <div class="staff-flip-card">
+            <img src="assets/team_priya.webp" alt="Priya Swaminathan" class="staff-flip-img">
+            <div class="staff-flip-overlay">
+              <span class="badge bg-success mb-2">On Duty</span>
+              <h5 class="staff-flip-name">Priya Swaminathan</h5>
+              <div class="staff-flip-role">VP of Community Strategy</div>
+              <div class="staff-flip-divider"></div>
+              <div class="staff-flip-info">
+                <i class="fa-solid fa-chess"></i>
+                <div>
+                  <strong>Campaign Strategy</strong>
+                  <span>Donor relations · ROI models · NICU fund</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-4">
+          <div class="staff-flip-card">
+            <img src="assets/team_sneha.webp" alt="Sneha Iyer" class="staff-flip-img">
+            <div class="staff-flip-overlay">
+              <span class="badge bg-secondary mb-2">On Field</span>
+              <h5 class="staff-flip-name">Sneha Iyer</h5>
+              <div class="staff-flip-role">Field Verification Lead</div>
+              <div class="staff-flip-divider"></div>
+              <div class="staff-flip-info">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                <div>
+                  <strong>Field Audit</strong>
+                  <span>GPS verification · kitchen dispatch rounds</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-4">
+          <div class="staff-flip-card">
+            <img src="assets/team_suresh.webp" alt="Suresh Kandasamy" class="staff-flip-img">
+            <div class="staff-flip-overlay">
+              <span class="badge bg-info mb-2">Available</span>
+              <h5 class="staff-flip-name">Suresh Kandasamy</h5>
+              <div class="staff-flip-role">Ward Coordinator</div>
+              <div class="staff-flip-divider"></div>
+              <div class="staff-flip-info">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <div>
+                  <strong>Chinna Muniyappan Kovil Ward</strong>
+                  <span>Ground logistics · beneficiary registration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-4">
+          <div class="staff-flip-card">
+            <img src="assets/team_deepika.webp" alt="Deepika Rajan" class="staff-flip-img">
+            <div class="staff-flip-overlay">
+              <span class="badge bg-success mb-2">Active</span>
+              <h5 class="staff-flip-name">Deepika Rajan</h5>
+              <div class="staff-flip-role">Education Campaign Lead</div>
+              <div class="staff-flip-divider"></div>
+              <div class="staff-flip-info">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                  <strong>School Programs</strong>
+                  <span>Tablet distribution · rural school partnerships</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-4">
+          <div class="staff-flip-card">
+            <img src="assets/team_vikram.webp" alt="Vikram Iyer" class="staff-flip-img">
+            <div class="staff-flip-overlay">
+              <span class="badge bg-warning mb-2">On Call</span>
+              <h5 class="staff-flip-name">Vikram Iyer</h5>
+              <div class="staff-flip-role">Donor Relations Manager</div>
+              <div class="staff-flip-divider"></div>
+              <div class="staff-flip-info">
+                <i class="fa-solid fa-handshake"></i>
+                <div>
+                  <strong>Donor Engagement</strong>
+                  <span>80G support · corporate CSR desk</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="main.js"></script>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const name  = localStorage.getItem('userName')  || 'Salem Admin';
+      const email = localStorage.getItem('userEmail') || 'ops.salem@thestackly.org';
+      const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2);
+
+      ['dashUserName','dashWelcomeName','dashTopbarName'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = id === 'dashWelcomeName' ? name.split(' ')[0] : name;
+      });
+      ['dashUserEmail','dashTopbarEmail'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.textContent = email;
+      });
+      ['dashUserAvatar','dashTopbarAvatar'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.textContent = initials;
+      });
+
+      
+      const ctx = document.getElementById('adminDonationChart');
+      if (ctx) {
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep 2026'],
+            datasets: [{
+              label: 'Funds Deployed (₹ Lakhs)',
+              data: [32, 45, 58, 64, 82, 95],
+              backgroundColor: 'rgba(38,143,118,.75)',
+              borderRadius: 10,
+              hoverBackgroundColor: 'rgba(255,87,34,.85)'
+            }]
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,.06)' }, ticks: { color: '#94a3b8' } },
+              x: { grid: { display: false }, ticks: { color: '#94a3b8' } }
+            }
+          }
+        });
+      }
+
+      
+      const ctx2 = document.getElementById('adminAnalyticsChart');
+      if (ctx2) {
+        new Chart(ctx2, {
+          type: 'line',
+          data: {
+            labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+            datasets: [{
+              label: 'Donations (₹ Lakhs)',
+              data: [32, 45, 58, 64, 82, 95],
+              borderColor: 'rgba(38,143,118,.9)',
+              backgroundColor: 'rgba(38,143,118,.15)',
+              fill: true, tension: 0.4, pointBackgroundColor: '#268f76', pointRadius: 5
+            }]
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,.06)' }, ticks: { color: '#94a3b8' } },
+              x: { grid: { display: false }, ticks: { color: '#94a3b8' } }
+            }
+          }
+        });
+      }
+    });
+
+    function approveCampaign(name) {
+      Swal.fire({
+        title: 'Approve Campaign?',
+        text: `Authorize "${name}" to go live on the public donation portal?`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#268f76',
+        confirmButtonText: 'Yes, Publish Live',
+        background: '#132218',
+        color: '#fff'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({ title: 'Approved!', text: `"${name}" is now live.`, icon: 'success', background: '#132218', color: '#fff', confirmButtonColor: '#268f76' });
+        }
+      });
+    }
+
+    function rejectCampaign(name) {
+      Swal.fire({
+        title: 'Request Revision?',
+        text: `Send back "${name}" for additional vendor quote verification?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#ef4444',
+        confirmButtonText: 'Send Revision Request',
+        background: '#132218',
+        color: '#fff'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({ title: 'Returned!', text: 'Field coordinator notified for re-verification.', icon: 'info', background: '#132218', color: '#fff', confirmButtonColor: '#268f76' });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
