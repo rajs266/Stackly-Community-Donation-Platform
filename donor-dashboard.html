@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Supporter Dashboard | Stackly Community Platform</title>
+  <meta name="description" content="Manage your donations, active recurring sponsorships, and instant 80G tax exemption receipts — your impact hub.">
+  <link rel="icon" type="image/webp" href="assets/top-logo.webp">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-page">
+
+  
+  <div class="stackly-preloader" id="stacklyPreloader">
+    <div class="preloader-inner">
+      <div class="preloader-pulse-ring"></div>
+      <div class="preloader-heart-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+      <div class="preloader-brand">
+        <span class="brand-text">STACKLY</span>
+        <span class="brand-sub">Community Foundation • Salem</span>
+      </div>
+      <div class="preloader-prog-bar"><div class="preloader-prog-fill" id="preloaderProgFill"></div></div>
+      <div class="preloader-status" id="preloaderStatus">Loading Your Impact Dashboard...</div>
+    </div>
+  </div>
+
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  
+  <div class="dash-sidebar-overlay" id="dashOverlay"></div>
+
+  
+  <aside class="dash-sidebar" id="dashSidebar" aria-label="Supporter navigation">
+    <div class="dash-sidebar__user">
+      <div class="dash-sidebar__avatar" id="dashUserAvatar">S</div>
+      <div class="min-w-0">
+        <div class="dash-sidebar__name" id="dashUserName">Supporter</div>
+        <div class="dash-sidebar__email" id="dashUserEmail">donor@thestackly.org</div>
+      </div>
+    </div>
+
+    <span class="dash-sidebar__role"><i class="fa-solid fa-hand-holding-heart"></i> Community Supporter</span>
+
+    <nav class="dash-sidebar__nav">
+      <div class="dash-sidebar__label">My Dashboard</div>
+      <button type="button" class="dash-sidebar__link active" data-section="overview">
+        <i class="fa-solid fa-gauge"></i> Overview
+      </button>
+      <button type="button" class="dash-sidebar__link" data-section="donations">
+        <i class="fa-solid fa-receipt"></i> My Donations
+      </button>
+      <button type="button" class="dash-sidebar__link" data-section="saved">
+        <i class="fa-solid fa-bookmark"></i> Saved Causes
+      </button>
+
+      <div class="dash-sidebar__label">Tax &amp; Account</div>
+      <button type="button" class="dash-sidebar__link" data-section="tax">
+        <i class="fa-solid fa-file-invoice-dollar"></i> 80G Tax Receipts
+      </button>
+      <button type="button" class="dash-sidebar__link" data-section="profile">
+        <i class="fa-solid fa-user-gear"></i> Profile Settings
+      </button>
+      <button type="button" class="dash-sidebar__link" data-section="support">
+        <i class="fa-solid fa-headset"></i> Support Desk
+      </button>
+    </nav>
+
+    <a href="signin.html" class="dash-sidebar__logout" id="dashLogout">
+      <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+    </a>
+  </aside>
+
+  
+  <header class="dash-topbar">
+    <div class="dash-topbar__left">
+      <div class="dash-topbar__logo-zone">
+        <button type="button" id="dashMenuToggle" class="dash-topbar__menu" aria-label="Open menu" aria-expanded="false" aria-controls="dashSidebar">
+          <span class="menu-icon" aria-hidden="true"><i class="fa-solid fa-bars"></i></span>
+          <span class="close-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
+        </button>
+        <a href="index.html" class="dash-topbar__logo">
+          <img src="assets/logo.webp" alt="Stackly">
+        </a>
+        <div class="dash-topbar__divider" aria-hidden="true"></div>
+      </div>
+      <div class="dash-topbar__welcome">
+        <h1>Welcome back, <span id="dashWelcomeName">Supporter</span> 👋</h1>
+        <p>Salem Chinna Thirupathi Community Welfare Hub</p>
+      </div>
+    </div>
+    <div class="dash-topbar__right">
+      <a href="index.html" class="dash-topbar__home"><i class="fa-solid fa-house"></i> <span>Public Site</span></a>
+      <a href="404.html" class="dash-topbar__bell" title="Notifications" aria-label="Notifications">
+        <i class="fa-regular fa-bell"></i><span class="dot"></span>
+      </a>
+      <div class="dash-topbar__chip">
+        <div class="dash-topbar__chip-avatar" id="dashTopbarAvatar">S</div>
+        <div class="dash-topbar__chip-meta">
+          <strong id="dashTopbarName">Supporter</strong>
+          <span id="dashTopbarEmail">donor@stackly.org</span>
+        </div>
+      </div>
+      <button class="dash-topbar__donate trigger-donation-modal" data-cause="General Community Welfare Fund">
+        <i class="fa-solid fa-heart me-1"></i> Donate
+      </button>
+    </div>
+  </header>
+
+  
+  <main class="dash-main">
+
+    
+    <section class="dash-section active" id="section-overview">
+
+      
+      <div class="dash-welcome-banner">
+        <span class="badge bg-warning mb-2"><i class="fa-solid fa-seedling me-1"></i> Active Impact Streak</span>
+        <h2>Transforming Lives in Salem.</h2>
+        <p>Thank you for being the foundation of our work. Your contributions directly fund daily nutrition, digital schooling, and clean borewell stations for thousands of families.</p>
+      </div>
+
+      
+      <div class="dash-impact-strip mb-4">
+        <div class="dash-impact-strip__copy">
+          <span class="dash-eyebrow">IMPACT PULSE</span>
+          <strong>Your giving is moving this week</strong>
+          <small>₹8,500 routed to nutrition, water, and learning hubs.</small>
+        </div>
+        <div class="dash-pulse-meter" aria-label="72 percent of monthly impact goal">
+          <span style="width: 72%;"></span>
+        </div>
+        <strong class="dash-pulse-value">72%</strong>
+      </div>
+
+      
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-xl-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--teal"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+              <div>
+                <div class="text-muted small">Total Donated</div>
+                <div class="fs-4 fw-bold">₹14,500</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--gold"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <div class="text-muted small">Lives Impacted</div>
+                <div class="fs-4 fw-bold">34 Souls</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--purple"><i class="fa-solid fa-calendar-check"></i></div>
+              <div>
+                <div class="text-muted small">Active Pledges</div>
+                <div class="fs-4 fw-bold">2 Monthly</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-xl-3">
+          <div class="dash-stat-card">
+            <div class="d-flex align-items-center gap-3">
+              <div class="dash-stat-card__icon dash-stat-card__icon--blue"><i class="fa-solid fa-certificate"></i></div>
+              <div>
+                <div class="text-muted small">80G Receipts</div>
+                <div class="fs-4 fw-bold">5 Validated</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <div class="dash-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold mb-0">Recent Contribution History</h5>
+              <span class="badge bg-secondary">Salem Operations</span>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0" id="dashDonationsTable">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Cause / Drive</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="small text-muted">19 Sep 2026</td>
+                    <td class="fw-semibold">Daily Nutrition for 450 Slum Children</td>
+                    <td class="fw-bold" style="color:var(--teal-400);">₹1,500</td>
+                    <td><span class="badge bg-success">Completed</span></td>
+                    <td><button class="btn btn-sm btn-stackly-outline action-download-receipt"><i class="fa-solid fa-download me-1"></i>80G</button></td>
+                  </tr>
+                  <tr>
+                    <td class="small text-muted">05 Sep 2026</td>
+                    <td class="fw-semibold">School Kits &amp; Digital Tabs for Rural Girls</td>
+                    <td class="fw-bold" style="color:var(--teal-400);">₹2,000</td>
+                    <td><span class="badge bg-success">Completed</span></td>
+                    <td><button class="btn btn-sm btn-stackly-outline action-download-receipt"><i class="fa-solid fa-download me-1"></i>80G</button></td>
+                  </tr>
+                  <tr>
+                    <td class="small text-muted">18 Aug 2026</td>
+                    <td class="fw-semibold">Solar-Powered Borewell Station</td>
+                    <td class="fw-bold" style="color:var(--teal-400);">₹5,000</td>
+                    <td><span class="badge bg-success">Completed</span></td>
+                    <td><button class="btn btn-sm btn-stackly-outline action-download-receipt"><i class="fa-solid fa-download me-1"></i>80G</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="dash-card">
+            <h5 class="fw-bold mb-3">Live Dispatch Spotlight</h5>
+            <div class="p-3 rounded-3 mb-3" style="background: rgba(38,143,118,.1); border: 1px solid rgba(38,143,118,.22);">
+              <div class="d-flex align-items-center gap-2 mb-1" style="color:var(--teal-400); font-weight:700; font-size:.85rem;">
+                <i class="fa-solid fa-bowl-food"></i> Salem Cloud Kitchen
+              </div>
+              <p class="small text-muted mb-2">Today's morning batch of 450 boiled eggs and vegetable pulao meals was delivered to Municipal Primary School, Chinna Thirupathi.</p>
+              <span class="badge bg-secondary"><i class="fa-solid fa-camera me-1"></i> Photo Verified 8:45 AM</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_kitchen.webp" alt="Nutrition drive">
+            <div class="p-3">
+              <span class="badge bg-success mb-2">Active</span>
+              <h6 class="fw-bold mb-1">Daily Nutrition Drive</h6>
+              <div class="small text-muted mb-2">450 meals daily · 3 wards covered</div>
+              <div class="progress mb-2" style="height:5px; background:rgba(38,143,118,.15);">
+                <div class="progress-bar" style="width:78%; background:linear-gradient(90deg,var(--teal-500),var(--teal-300));"></div>
+              </div>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="Daily Nutrition for 450 Slum Children">Contribute Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_water.webp" alt="Water drive">
+            <div class="p-3">
+              <span class="badge bg-info mb-2">Scaling</span>
+              <h6 class="fw-bold mb-1">Solar Borewell Stations</h6>
+              <div class="small text-muted mb-2">Clean water for 2,400 families</div>
+              <div class="progress mb-2" style="height:5px; background:rgba(38,143,118,.15);">
+                <div class="progress-bar" style="width:80%; background:linear-gradient(90deg,#60a5fa,#3b82f6);"></div>
+              </div>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="Solar-Powered Borewell Station">Contribute Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_education.webp" alt="Education drive">
+            <div class="p-3">
+              <span class="badge bg-warning mb-2">Urgent</span>
+              <h6 class="fw-bold mb-1">School Kits &amp; Digital Tabs</h6>
+              <div class="small text-muted mb-2">250 girls · Namakkal region</div>
+              <div class="progress mb-2" style="height:5px; background:rgba(38,143,118,.15);">
+                <div class="progress-bar" style="width:64%; background:linear-gradient(90deg,var(--amber-500),#f59e0b);"></div>
+              </div>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="School Kits & Digital Tabs for Rural Girls">Contribute Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-donations">
+      <h2 class="fw-bold mb-1">Complete Contribution Ledger</h2>
+      <p class="text-muted mb-4">Every transaction verified by Stackly Salem Operations Desk.</p>
+
+      <div class="dash-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h5 class="fw-bold mb-0">All Transactions</h5>
+            <small class="text-muted">Verified and 80G-eligible</small>
+          </div>
+          <button class="btn btn-sm btn-stackly-primary trigger-donation-modal">+ New Donation</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Cause</th>
+                <th>Amount</th>
+                <th>Frequency</th>
+                <th>Tax Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>STK-849102</code></td>
+                <td>Daily Nutrition for 450 Slum Children</td>
+                <td class="fw-bold" style="color:var(--teal-400);">₹1,500</td>
+                <td><span class="badge bg-secondary">One-Time</span></td>
+                <td><span class="badge bg-success">80G Issued</span></td>
+                <td><button class="btn btn-sm btn-stackly-outline action-download-receipt"><i class="fa-solid fa-download"></i> Receipt</button></td>
+              </tr>
+              <tr>
+                <td><code>STK-729401</code></td>
+                <td>School Kits &amp; Digital Tabs for Rural Girls</td>
+                <td class="fw-bold" style="color:var(--teal-400);">₹2,000</td>
+                <td><span class="badge bg-warning">Monthly Active</span></td>
+                <td><span class="badge bg-success">80G Issued</span></td>
+                <td><button class="btn btn-sm btn-stackly-outline action-download-receipt"><i class="fa-solid fa-download"></i> Receipt</button></td>
+              </tr>
+              <tr>
+                <td><code>STK-610294</code></td>
+                <td>Solar-Powered Borewell Station</td>
+                <td class="fw-bold" style="color:var(--teal-400);">₹5,000</td>
+                <td><span class="badge bg-secondary">One-Time</span></td>
+                <td><span class="badge bg-success">80G Issued</span></td>
+                <td><button class="btn btn-sm btn-stackly-outline action-download-receipt"><i class="fa-solid fa-download"></i> Receipt</button></td>
+              </tr>
+              <tr>
+                <td><code>STK-540118</code></td>
+                <td>Emergency Pediatric Surgeries Fund</td>
+                <td class="fw-bold" style="color:var(--teal-400);">₹3,000</td>
+                <td><span class="badge bg-secondary">One-Time</span></td>
+                <td><span class="badge bg-success">80G Issued</span></td>
+                <td><button class="btn btn-sm btn-stackly-outline action-download-receipt"><i class="fa-solid fa-download"></i> Receipt</button></td>
+              </tr>
+              <tr>
+                <td><code>STK-498203</code></td>
+                <td>Monthly Rations for Destitute Elders</td>
+                <td class="fw-bold" style="color:var(--teal-400);">₹3,000</td>
+                <td><span class="badge bg-warning">Monthly Active</span></td>
+                <td><span class="badge bg-warning">Pending PAN</span></td>
+                <td><button class="btn btn-sm btn-stackly-outline action-download-receipt"><i class="fa-solid fa-download"></i> Receipt</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-saved">
+      <h2 class="fw-bold mb-1">Saved Causes</h2>
+      <p class="text-muted mb-4">Causes you've bookmarked for future support.</p>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_healthcare.webp" alt="Healthcare campaign">
+            <div class="p-3">
+              <span class="badge bg-success mb-2">Active</span>
+              <h6 class="fw-bold mb-1">Emergency Pediatric Surgeries Fund</h6>
+              <div class="small text-muted mb-2">Salem Government Medical College Partner</div>
+              <p class="small text-muted mb-3">Lifesaving interventions for children under 12 from BPL families in Salem district.</p>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="Emergency Pediatric Surgeries Fund">Donate Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_elderly.webp" alt="Elderly welfare">
+            <div class="p-3">
+              <span class="badge bg-success mb-2">Active</span>
+              <h6 class="fw-bold mb-1">Monthly Rations for Destitute Elders</h6>
+              <div class="small text-muted mb-2">Chinna Muniyappan Kovil Ward</div>
+              <p class="small text-muted mb-3">Monthly rice, pulses and oil rations for 60 abandoned elders living alone in Salem's old quarters.</p>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="Monthly Rations for Destitute Elders">Donate Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_disaster.webp" alt="Disaster relief">
+            <div class="p-3">
+              <span class="badge bg-danger mb-2">Emergency</span>
+              <h6 class="fw-bold mb-1">Flood Relief Rations – Namakkal</h6>
+              <div class="small text-muted mb-2">Namakkal District Emergency</div>
+              <p class="small text-muted mb-3">Immediate dry rations and sanitation kits for 800 families displaced by recent flooding.</p>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="Flood Relief Rations Namakkal">Donate Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_nutrition.webp" alt="Nutrition program">
+            <div class="p-3">
+              <span class="badge bg-info mb-2">New Drive</span>
+              <h6 class="fw-bold mb-1">Protein Supplement for Malnourished Kids</h6>
+              <div class="small text-muted mb-2">Ayothiyapattinam &amp; Kolathur</div>
+              <p class="small text-muted mb-3">Nutritionist-approved supplemental feeding for 180 severely malnourished children under 5.</p>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="Protein Supplement Malnourished Kids">Donate Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_water.webp" alt="Water station">
+            <div class="p-3">
+              <span class="badge bg-success mb-2">Active</span>
+              <h6 class="fw-bold mb-1">RO Water Station – Sukkambatti</h6>
+              <div class="small text-muted mb-2">Sukkambatti Village, Namakkal</div>
+              <p class="small text-muted mb-3">Install a solar-powered RO station serving 400 daily users in fluoride-affected Sukkambatti village.</p>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="RO Water Station Sukkambatti">Donate Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dash-equip-card">
+            <img src="assets/cause_education.webp" alt="Digital education">
+            <div class="p-3">
+              <span class="badge bg-warning mb-2">Urgent</span>
+              <h6 class="fw-bold mb-1">Solar Lighting for Night Study</h6>
+              <div class="small text-muted mb-2">3 Rural Schools, Yercaud</div>
+              <p class="small text-muted mb-3">Solar lanterns for 120 tribal children who study after dark with no reliable electricity access.</p>
+              <button class="btn btn-sm btn-stackly-primary w-100 trigger-donation-modal" data-cause="Solar Lighting Night Study Yercaud">Donate Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-tax">
+      <h2 class="fw-bold mb-1">Section 80G Tax Exemption Certificates</h2>
+      <p class="text-muted mb-4">Eligible for 50% deduction under Indian Income Tax Act, 1961.</p>
+
+      <div class="dash-card mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h5 class="fw-bold mb-0">Your PAN: <span style="color:var(--teal-400);">ABCDE1234F</span></h5>
+            <small class="text-muted">All receipts issued with UDIN digital signature from Stackly Salem HQ.</small>
+          </div>
+          <a href="404.html" class="btn btn-sm btn-stackly-primary">
+            <i class="fa-solid fa-file-arrow-down me-1"></i> Download FY 2026-27
+          </a>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="dash-info-item flex-column align-items-start gap-2">
+              <div class="d-flex align-items-center gap-2 w-100 justify-content-between">
+                <strong class="mb-0">STK-849102 · Sep 19</strong>
+                <span class="badge bg-success">Issued</span>
+              </div>
+              <span>Daily Nutrition · ₹1,500</span>
+              <button class="btn btn-sm btn-stackly-outline action-download-receipt w-100"><i class="fa-solid fa-download me-1"></i> Download 80G PDF</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dash-info-item flex-column align-items-start gap-2">
+              <div class="d-flex align-items-center gap-2 w-100 justify-content-between">
+                <strong class="mb-0">STK-729401 · Sep 05</strong>
+                <span class="badge bg-success">Issued</span>
+              </div>
+              <span>School Kits · ₹2,000</span>
+              <button class="btn btn-sm btn-stackly-outline action-download-receipt w-100"><i class="fa-solid fa-download me-1"></i> Download 80G PDF</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dash-info-item flex-column align-items-start gap-2">
+              <div class="d-flex align-items-center gap-2 w-100 justify-content-between">
+                <strong class="mb-0">STK-610294 · Aug 18</strong>
+                <span class="badge bg-success">Issued</span>
+              </div>
+              <span>Borewell Station · ₹5,000</span>
+              <button class="btn btn-sm btn-stackly-outline action-download-receipt w-100"><i class="fa-solid fa-download me-1"></i> Download 80G PDF</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dash-info-item flex-column align-items-start gap-2">
+              <div class="d-flex align-items-center gap-2 w-100 justify-content-between">
+                <strong class="mb-0">STK-540118 · Jul 22</strong>
+                <span class="badge bg-success">Issued</span>
+              </div>
+              <span>Emergency Healthcare · ₹3,000</span>
+              <button class="btn btn-sm btn-stackly-outline action-download-receipt w-100"><i class="fa-solid fa-download me-1"></i> Download 80G PDF</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dash-info-item flex-column align-items-start gap-2">
+              <div class="d-flex align-items-center gap-2 w-100 justify-content-between">
+                <strong class="mb-0">STK-498203 · Jul 01</strong>
+                <span class="badge bg-warning">PAN Pending</span>
+              </div>
+              <span>Elder Rations · ₹3,000</span>
+              <a href="404.html" class="btn btn-sm btn-stackly-outline w-100"><i class="fa-solid fa-user me-1"></i> Update PAN</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dash-info-item flex-column align-items-start gap-2">
+              <div class="d-flex align-items-center gap-2 w-100 justify-content-between">
+                <strong class="mb-0">STK-398711 · Jun 14</strong>
+                <span class="badge bg-success">Issued</span>
+              </div>
+              <span>Community Champion Fund · ₹2,500</span>
+              <button class="btn btn-sm btn-stackly-outline action-download-receipt w-100"><i class="fa-solid fa-download me-1"></i> Download 80G PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-lg-4">
+          <div class="dash-card dash-pan-card h-100">
+            <div class="dash-pan-card__icon"><i class="fa-solid fa-id-card"></i></div>
+            <div>
+              <span class="dash-eyebrow">TAX IDENTITY</span>
+              <h5 class="fw-bold mb-1">Your PAN: <strong>ABCDE1234F</strong></h5>
+              <p class="text-muted small mb-0">Verified for digital 80G receipt processing and annual tax statements.</p>
+            </div>
+            <a href="404.html" class="btn btn-sm btn-stackly-primary mt-3">
+              <i class="fa-solid fa-pen-to-square me-1"></i> Review PAN Details
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="dash-card dash-pan-card dash-pan-card--soft h-100">
+            <div class="dash-pan-card__icon"><i class="fa-solid fa-shield-heart"></i></div>
+            <div>
+              <span class="dash-eyebrow">RECEIPT SECURITY</span>
+              <h5 class="fw-bold mb-1">UDIN-backed certificates</h5>
+              <p class="text-muted small mb-0">Every issued receipt is digitally signed by the Stackly Salem accounting desk.</p>
+            </div>
+            <a href="404.html" class="btn btn-sm btn-stackly-outline mt-3">
+              <i class="fa-solid fa-headset me-1"></i> Ask Tax Support
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="dash-card dash-pan-card dash-pan-card--amber h-100">
+            <div class="dash-pan-card__icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div>
+              <span class="dash-eyebrow">TAX READINESS</span>
+              <h5 class="fw-bold mb-1">FY 2026-27 is on track</h5>
+              <p class="text-muted small mb-0">5 receipts are validated. Your annual statement will be ready after the final March reconciliation.</p>
+            </div>
+            <a href="404.html" class="btn btn-sm btn-stackly-outline mt-3">
+              <i class="fa-solid fa-file-lines me-1"></i> View Tax Guide
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-hotline">
+        <div class="dash-hotline__title"><i class="fa-solid fa-circle-info"></i> Tax Assistance</div>
+        <span class="dash-hotline__num">support@thestackly.org</span>
+        <p>For consolidated FY statements, Form 10BE queries, or UDIN verification — reach our Salem accounting team.</p>
+        <div class="dash-fill-panel__meta mt-3">
+          <span class="dash-fill-chip">Response: 2 hrs</span>
+          <span class="dash-fill-chip">Mon–Sat 9 AM–6 PM</span>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-profile">
+      <h2 class="fw-bold mb-1">Profile &amp; Communication Preferences</h2>
+      <p class="text-muted mb-4">Keep your contact details and PAN updated for seamless 80G processing.</p>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="dash-card">
+            <h5 class="fw-bold mb-3">Account Details</h5>
+            <form onsubmit="event.preventDefault(); Swal.fire({ title: 'Profile Updated!', icon: 'success', background: '#132218', color: '#fff', confirmButtonColor: '#268f76' });">
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="profileName" value="Karthik Subramanian">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="profileEmail" value="donor@thestackly.org">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Mobile Number</label>
+                  <input type="tel" class="form-control" value="+91 98765 43210">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Income Tax PAN (For 80G)</label>
+                  <input type="text" class="form-control" value="ABCDE1234F">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-stackly-primary">Save Changes</button>
+            </form>
+          </div>
+
+          <div class="dash-card dash-profile-action-card">
+            <div class="dash-pan-card__icon"><i class="fa-solid fa-sliders"></i></div>
+            <div>
+              <span class="dash-eyebrow">GIVING PREFERENCES</span>
+              <h5 class="fw-bold mb-1">Keep your impact plan current</h5>
+              <p class="text-muted small mb-0">Choose how often you receive field updates and which causes should appear first in your supporter hub.</p>
+            </div>
+            <a href="404.html" class="btn btn-sm btn-stackly-outline mt-3">Manage Preferences</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="dash-card mb-4">
+            <h5 class="fw-bold mb-3">Notification Preferences</h5>
+            <div class="dash-pref-row">
+              <div><strong>SMS Impact Alerts</strong><span>Get texts when your funds are deployed in the field</span></div>
+              <button type="button" class="dash-switch is-on" aria-pressed="true" aria-label="Toggle SMS alerts"></button>
+            </div>
+            <div class="dash-pref-row">
+              <div><strong>WhatsApp Receipts</strong><span>80G receipts delivered directly to WhatsApp</span></div>
+              <button type="button" class="dash-switch is-on" aria-pressed="true" aria-label="Toggle WhatsApp"></button>
+            </div>
+            <div class="dash-pref-row">
+              <div><strong>Monthly Impact Report</strong><span>See how your donations changed lives this month</span></div>
+              <button type="button" class="dash-switch" aria-pressed="false" aria-label="Toggle report"></button>
+            </div>
+            <div class="dash-pref-row">
+              <div><strong>New Cause Alerts</strong><span>Know when urgent drives go live near Salem</span></div>
+              <button type="button" class="dash-switch is-on" aria-pressed="true" aria-label="Toggle cause alerts"></button>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <h5 class="fw-bold mb-3">Your Supporter Badge</h5>
+            <div class="dash-info-list">
+              <div class="dash-info-item">
+                <i class="fa-solid fa-seedling"></i>
+                <div><strong>Impact Streak</strong><span>Donated every month for 7 consecutive months</span></div>
+              </div>
+              <div class="dash-info-item">
+                <i class="fa-solid fa-star"></i>
+                <div><strong>Community Champion</strong><span>Member since March 2025 · 5 causes supported</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="dash-section" id="section-support">
+      <h2 class="fw-bold mb-1">Direct Salem Coordinator Helpdesk</h2>
+      <p class="text-muted mb-4">Reach our Chinna Thirupathi coordination officers directly — we respond in under 2 hours.</p>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="dash-card h-100">
+            <h5 class="fw-bold mb-3">Submit a Support Request</h5>
+            <form id="supportForm" onsubmit="event.preventDefault(); Swal.fire({ title: 'Request Sent!', text: 'Our Salem team will respond within 2 hours.', icon: 'success', background: '#132218', color: '#fff', confirmButtonColor: '#268f76' });">
+              <div class="mb-3">
+                <label class="form-label">Subject</label>
+                <input type="text" class="form-control" placeholder="e.g. Need help with 80G certificate download">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Related Donation (optional)</label>
+                <input type="text" class="form-control" placeholder="Enter transaction ID or cause name (e.g. STK-849102)">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Your Message</label>
+                <textarea class="form-control" rows="4" placeholder="Describe your query or issue..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-stackly-primary">Send Request</button>
+            </form>
+          </div>
+
+          <div class="dash-card dash-support-checklist">
+            <div class="dash-pan-card__icon"><i class="fa-solid fa-list-check"></i></div>
+            <div>
+              <span class="dash-eyebrow">FASTEST RESPONSE</span>
+              <h5 class="fw-bold mb-1">Add the useful details</h5>
+              <p class="text-muted small mb-0">Include a receipt number, cause name, or screenshot reference so the Salem coordinator can resolve your request faster.</p>
+            </div>
+            <div class="dash-fill-panel__meta mt-3">
+              <span class="dash-fill-chip">Typical reply: 2 hrs</span>
+              <span class="dash-fill-chip">Mon–Sat desk</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="d-flex flex-column h-100 gap-4">
+            <div class="dash-hotline">
+              <div class="dash-hotline__title"><i class="fa-solid fa-phone-volume"></i> Phone Dispatch</div>
+              <a href="tel:+919876543210" class="dash-hotline__num" style="text-decoration:none;">+91 98765 43210</a>
+              <p>Available 9:00 AM – 7:00 PM Mon–Sat for immediate donor support.</p>
+              <div class="dash-fill-panel__meta mt-2">
+                <span class="dash-fill-chip">Instant Response</span>
+                <span class="dash-fill-chip">Mon–Sat</span>
+              </div>
+            </div>
+
+            <div class="dash-card">
+              <h5 class="fw-bold mb-3">Common Questions</h5>
+              <div class="dash-faq-item"><strong>When do I get my 80G certificate?</strong><span>Instantly after transaction — download from the Tax Receipts section or your registered email.</span></div>
+              <div class="dash-faq-item"><strong>Can I set up monthly giving?</strong><span>Yes — choose "Monthly" when donating and we'll auto-process each month with a fresh 80G receipt.</span></div>
+              <div class="dash-faq-item"><strong>How do I cancel a recurring pledge?</strong><span>Email us or call and we'll stop within 1 business day. No questions asked.</span></div>
+              <div class="dash-faq-item"><strong>Is my donation 100% tax deductible?</strong><span>50% of your donation qualifies for deduction under Section 80G, Income Tax Act 1961.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <div class="modal fade modal-charivo" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="donationModalLabel"><i class="fa-solid fa-heart text-warning me-2"></i> Fast Contribution</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-muted mb-3">Contributing to: <strong id="donationCauseName">General Community Welfare Fund</strong></p>
+          <form id="donationFormModal">
+            <div class="preset-amount-grid">
+              <div class="preset-amt-btn" data-amt="500">₹500</div>
+              <div class="preset-amt-btn active" data-amt="1000">₹1,000</div>
+              <div class="preset-amt-btn" data-amt="2500">₹2,500</div>
+              <div class="preset-amt-btn" data-amt="5000">₹5,000</div>
+            </div>
+            <div class="form-group-custom">
+              <label class="form-label-custom" for="customAmountInput">Custom Amount (INR)</label>
+              <input type="number" class="form-control-custom" id="customAmountInput" value="1000" min="50">
+            </div>
+            <button type="submit" class="btn-pill-orange w-100 justify-content-center py-3 mt-3">
+              <span>Complete Contribution</span>
+              <i class="fa-solid fa-arrow-right ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      const name  = localStorage.getItem('userName')  || 'Karthik Subramanian';
+      const email = localStorage.getItem('userEmail') || 'donor@thestackly.org';
+      const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2);
+
+      ['dashUserName','dashTopbarName'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.textContent = name;
+      });
+      const wn = document.getElementById('dashWelcomeName');
+      if (wn) wn.textContent = name.split(' ')[0];
+      ['dashUserEmail','dashTopbarEmail'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.textContent = email;
+      });
+      ['dashUserAvatar','dashTopbarAvatar'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.textContent = initials;
+      });
+
+      
+      const pName = document.getElementById('profileName');
+      if (pName && localStorage.getItem('userName')) pName.value = name;
+      const pEmail = document.getElementById('profileEmail');
+      if (pEmail && localStorage.getItem('userEmail')) pEmail.value = email;
+
+      
+      document.querySelectorAll('.trigger-donation-modal').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cause = btn.dataset.cause || 'General Community Welfare Fund';
+          const label = document.getElementById('donationCauseName');
+          if (label) label.textContent = cause;
+        });
+      });
+
+      
+      document.querySelectorAll('.dash-switch').forEach(sw => {
+        sw.addEventListener('click', () => {
+          sw.classList.toggle('is-on');
+          sw.setAttribute('aria-pressed', sw.classList.contains('is-on').toString());
+        });
+      });
+    });
+  </script>
+</body>
+</html>

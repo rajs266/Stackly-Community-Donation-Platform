@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Impact Stories &amp; Field Reports | Stackly Platform</title>
+  <meta name="description" content="Discover heartwarming photo-stories and ground reports from Salem, Dharmapuri, and Yercaud foothills showing the real human impact of your contributions.">
+  <link rel="icon" type="image/webp" href="assets/top-logo.webp">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="stackly-preloader" id="stacklyPreloader">
+    <div class="preloader-inner">
+      <div class="preloader-pulse-ring"></div>
+      <div class="preloader-heart-icon">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+      </div>
+      <div class="preloader-brand">
+        <span class="brand-text">STACKLY</span>
+        <span class="brand-sub">Community Foundation • Salem</span>
+      </div>
+      <div class="preloader-prog-bar">
+        <div class="preloader-prog-fill" id="preloaderProgFill"></div>
+      </div>
+      <div class="preloader-status" id="preloaderStatus">Connecting Grassroots Drives...</div>
+    </div>
+  </div>
+
+
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  
+  <header class="header-main">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="assets/logo.webp" alt="Stackly Logo">
+      </a>
+
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="donations.html" class="nav-link-custom">Donations</a>
+        <a href="campaigns.html" class="nav-link-custom">Campaigns</a>
+        <a href="stories.html" class="nav-link-custom active">Stories</a>
+        <a href="contact.html" class="nav-link-custom">Contact</a>
+      </nav>
+
+      
+      <div class="d-flex align-items-center gap-2">
+        <a href="get-started.html" class="btn-pill-teal d-none d-md-inline-flex" style="padding: 10px 18px; font-size: 0.92rem;">
+          <span>Get Started</span>
+          <i class="fa-solid fa-user-plus"></i>
+        </a>
+        <a href="javascript:void(0)" class="btn-pill-orange d-none d-sm-inline-flex trigger-donation-modal">
+          <span>Donate Now</span>
+          <i class="fa-solid fa-heart"></i>
+        </a>
+        <button class="mobile-nav-toggle d-lg-none" id="mobileNavToggle" aria-label="Open Navigation"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <img src="assets/logo.webp" alt="Stackly" style="height: 38px;">
+      <button class="close-btn" id="mobileDrawerClose" aria-label="Close Navigation"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+        <ul class="mobile-drawer-nav mb-4">
+      <li><a href="index.html"><i class="fa-solid fa-house me-2"></i> Home</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info me-2"></i> About</a></li>
+      <li><a href="donations.html"><i class="fa-solid fa-hand-holding-heart me-2"></i> Donations</a></li>
+      <li><a href="campaigns.html"><i class="fa-solid fa-bullhorn me-2"></i> Campaigns</a></li>
+      <li><a href="stories.html" class="active"><i class="fa-solid fa-newspaper me-2"></i> Stories</a></li>
+      <li><a href="contact.html"><i class="fa-solid fa-envelope me-2"></i> Contact</a></li>
+    </ul>
+    <div class="mt-auto pt-3 border-top border-secondary">
+      <div class="d-grid gap-2 mb-3">
+        <a href="get-started.html" class="btn-pill-teal text-center"><span class="btn-text">Get Started</span></a>
+        <a href="javascript:void(0)" class="btn-pill-orange text-center trigger-donation-modal"><span class="btn-text">Donate Now</span></a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 1 — FIELD DISPATCHES HERO BANNER
+       ══════════════════════════════════════════════════════════ -->
+  <section class="page-hero-banner-img reveal-init"
+    style="background-image: url('assets/pexels-yankrukov-7693155.webp');">
+    <div class="container text-center">
+      <div class="page-hero-trust-pill reveal-card reveal-top">
+        <i class="fa-solid fa-newspaper text-warning"></i>
+        <span>Community Voice · Ground Reports · Salem, TN</span>
+      </div>
+      <div class="section-eyebrow-orange justify-content-center text-warning mb-2 reveal-card reveal-bottom stagger-1">
+        <span class="hero-badge-line"></span>
+        <span>Field Dispatches</span>
+        <span class="hero-badge-line"></span>
+      </div>
+      <h1 class="display-4 fw-bold text-white mb-3 reveal-card reveal-bottom stagger-2">Stories of <span style="color:var(--orange-400);">Human Triumph</span></h1>
+      <p class="text-white-50 mx-auto mb-4 reveal-card reveal-bottom stagger-3" style="max-width: 680px; font-size: 1.05rem;">
+        Real accounts from our Salem volunteers and beneficiaries — showing how compassion turns into tangible, documented change on the ground.
+      </p>
+      <div class="page-hero-breadcrumb reveal-card reveal-bottom stagger-4">
+        <a href="index.html"><i class="fa-solid fa-house me-1"></i> Home</a>
+        <i class="fa-solid fa-chevron-right fs-xs"></i>
+        <span>Field Dispatches</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 2 — FEATURED EDITORIAL STORY OF THE MONTH
+       ══════════════════════════════════════════════════════════ -->
+  <section class="py-5 reveal-init" style="background: #f8fdf9;">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 text-center mb-4 reveal-card reveal-bottom">
+          <span class="section-eyebrow-orange"><span class="hero-badge-line"></span><span>Editor's Pick — September 2026</span><span class="hero-badge-line"></span></span>
+          <h2 class="section-title-charivo mt-2">Featured Story of the Month</h2>
+        </div>
+      </div>
+      <div class="row g-0 align-items-stretch rounded-4 overflow-hidden shadow-lg" style="min-height:420px;">
+        
+        <div class="col-lg-6 reveal-card reveal-left">
+          <div class="h-100" style="background:url('assets/pexels-yankrukov-7793098.webp') center/cover no-repeat; min-height:320px; position:relative;">
+            <div class="position-absolute top-0 start-0 m-3">
+              <span class="badge text-white fw-bold px-3 py-2" style="background:var(--orange-500); border-radius:2rem; font-size:.8rem; letter-spacing:.04em;">
+                <i class="fa-solid fa-star me-1"></i> FEATURED
+              </span>
+            </div>
+            <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background:linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 100%);">
+              <div class="d-flex align-items-center gap-2">
+                <img src="assets/team_priya.webp" alt="Dr. Priya" class="rounded-circle border border-2 border-white" style="width:36px;height:36px;object-fit:cover;">
+                <div>
+                  <div class="text-white fw-semibold" style="font-size:.85rem;">Dr. Priya Subramaniam</div>
+                  <div class="text-white-50" style="font-size:.75rem;">Field Health Correspondent · Salem HQ</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 reveal-card reveal-right" style="background:#fff;">
+          <div class="p-4 p-lg-5 d-flex flex-column h-100 justify-content-center">
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+              <span class="badge rounded-pill text-white" style="background:var(--teal-700); font-size:.75rem;">Healthcare</span>
+              <span class="text-muted small"><i class="fa-solid fa-clock me-1"></i> 8 min read</span>
+              <span class="text-muted small"><i class="fa-solid fa-calendar me-1"></i> Sep 18, 2026</span>
+            </div>
+            <h3 class="fw-black mb-3" style="font-size:1.6rem; color:var(--teal-900); line-height:1.25;">
+              1,200 Children Freed from Fluorosis — How a ₹38L Solar Borewell Changed Everything
+            </h3>
+            <p class="text-muted mb-4" style="font-size:1rem; line-height:1.7;">
+              For two decades, groundwater in Salem's eastern wards had fluoride levels 4× above safe limits. Our solar borewell, ceramic filtration, and community training program delivered its first zero-fluoride reading this month.
+            </p>
+            <div class="featured-story-stats d-flex align-items-center gap-3 mb-4 p-3 rounded-3" style="background:var(--teal-50, #eef7f5);">
+              <div class="text-center flex-fill">
+                <div class="fw-black" style="font-size:1.4rem; color:var(--teal-700);">1,247</div>
+                <div class="text-muted small">Beneficiaries</div>
+              </div>
+              <div class="vr d-none d-sm-block"></div>
+              <div class="text-center flex-fill">
+                <div class="fw-black featured-stat-rupee" style="font-size:1.4rem; color:var(--orange-500);">₹38L</div>
+                <div class="text-muted small">Crowdfunded</div>
+              </div>
+              <div class="vr d-none d-sm-block"></div>
+              <div class="text-center flex-fill">
+                <div class="fw-black" style="font-size:1.4rem; color:var(--teal-700);">0 ppm</div>
+                <div class="text-muted small">Fluoride Now</div>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="btn btn-pill-teal px-4 py-2 align-self-start" data-bs-toggle="modal" data-bs-target="#storyModal1">
+              <span>Read Full Dispatch</span> <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 3 — FILTERABLE GROUND STORIES GRID
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section-blog reveal-init" id="stories-grid">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12 text-center reveal-card reveal-bottom">
+          <span class="section-eyebrow-orange"><span class="hero-badge-line"></span><span>From the Ground</span><span class="hero-badge-line"></span></span>
+          <h2 class="section-title-charivo mt-2 mb-3">All Field Stories</h2>
+          
+          <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="blogFilterBtns">
+            <button class="btn filter-btn blog-filter-btn active px-4 py-2" data-category="all">All Stories</button>
+            <button class="btn filter-btn blog-filter-btn px-4 py-2" data-category="kitchen">Field Kitchen</button>
+            <button class="btn filter-btn blog-filter-btn px-4 py-2" data-category="education">Education</button>
+            <button class="btn filter-btn blog-filter-btn px-4 py-2" data-category="water">Clean Water</button>
+            <button class="btn filter-btn blog-filter-btn px-4 py-2" data-category="healthcare">Healthcare</button>
+            <button class="btn filter-btn blog-filter-btn px-4 py-2" data-category="welfare">Senior Welfare</button>
+            <button class="btn filter-btn blog-filter-btn px-4 py-2" data-category="volunteer">Volunteer</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4" id="blogStoriesGrid">
+        
+        <div class="col-md-6 col-lg-4 blog-story-col reveal-card reveal-bottom stagger-1" data-category="kitchen">
+          <article class="blog-card-charivo h-100">
+            <div class="blog-thumb">
+              <span class="blog-date-badge">18 Sep 2026</span>
+              <img src="assets/cause_kitchen.webp" alt="Child Feeding Kitchen">
+              <span class="position-absolute top-0 start-0 m-2 badge rounded-pill" style="background:var(--orange-500);color:#fff;">Field Kitchen</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="blog-title">How Stackly Cooks 2,400 Nutritious Meals Every Morning</h3>
+              <p class="blog-summary">Inside our Chinna Thirupathi cloud kitchen where local mothers pack protein-rich meals for government school students every dawn.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-user me-1"></i> Suresh K.</span>
+                <a href="javascript:void(0)" class="blog-readmore" data-bs-toggle="modal" data-bs-target="#storyModal1">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-4 blog-story-col reveal-card reveal-bottom stagger-2" data-category="education">
+          <article class="blog-card-charivo h-100">
+            <div class="blog-thumb">
+              <span class="blog-date-badge">12 Sep 2026</span>
+              <img src="assets/cause_education.webp" alt="Rural Classrooms">
+              <span class="position-absolute top-0 start-0 m-2 badge rounded-pill" style="background:var(--teal-700);color:#fff;">Education</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="blog-title">Digital Tablets Spark Math &amp; Science Curiosity in Rural Schools</h3>
+              <p class="blog-summary">First-generation learners near Yercaud share how interactive tablets helped them ace state secondary exams.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-user me-1"></i> Deepika M.</span>
+                <a href="javascript:void(0)" class="blog-readmore" data-bs-toggle="modal" data-bs-target="#storyModal1">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-4 blog-story-col reveal-card reveal-bottom stagger-3" data-category="water">
+          <article class="blog-card-charivo h-100">
+            <div class="blog-thumb">
+              <span class="blog-date-badge">04 Sep 2026</span>
+              <img src="assets/cause_water.webp" alt="Safe Drinking Water">
+              <span class="position-absolute top-0 start-0 m-2 badge rounded-pill" style="background:var(--teal-700);color:#fff;">Clean Water</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="blog-title">Zero Fluoride: Transforming Groundwater in Salem Wards</h3>
+              <p class="blog-summary">A solar borehole and bio-sand filtration unit ended 20 years of chronic fluorosis for 1,200 villagers.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-user me-1"></i> Dr. Priya S.</span>
+                <a href="javascript:void(0)" class="blog-readmore" data-bs-toggle="modal" data-bs-target="#storyModal1">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-4 blog-story-col reveal-card reveal-bottom stagger-1" data-category="healthcare">
+          <article class="blog-card-charivo h-100">
+            <div class="blog-thumb">
+              <span class="blog-date-badge">26 Aug 2026</span>
+              <img src="assets/cause_healthcare.webp" alt="Pediatric Miracle">
+              <span class="position-absolute top-0 start-0 m-2 badge rounded-pill" style="background:var(--orange-500);color:#fff;">Healthcare</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="blog-title">Baby Kaviya's Heart Beats Strong: A Surgery Success</h3>
+              <p class="blog-summary">7-month-old Kaviya's corrective heart surgery was fully crowdfunded in just 36 hours on Stackly.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-user me-1"></i> Arjun R.</span>
+                <a href="javascript:void(0)" class="blog-readmore" data-bs-toggle="modal" data-bs-target="#storyModal1">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-4 blog-story-col reveal-card reveal-bottom stagger-2" data-category="welfare">
+          <article class="blog-card-charivo h-100">
+            <div class="blog-thumb">
+              <span class="blog-date-badge">19 Aug 2026</span>
+              <img src="assets/cause_elderly.webp" alt="Elderly Nutrition Care">
+              <span class="position-absolute top-0 start-0 m-2 badge rounded-pill" style="background:var(--teal-700);color:#fff;">Senior Welfare</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="blog-title">Restoring Smile and Dignity to Abandoned Grandma Lakshmi</h3>
+              <p class="blog-summary">78-year-old Lakshmi Amma now receives warm meals and free diabetic medications daily through Stackly.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-user me-1"></i> Selvam T.</span>
+                <a href="javascript:void(0)" class="blog-readmore" data-bs-toggle="modal" data-bs-target="#storyModal1">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-4 blog-story-col reveal-card reveal-bottom stagger-3" data-category="volunteer">
+          <article class="blog-card-charivo h-100">
+            <div class="blog-thumb">
+              <span class="blog-date-badge">10 Aug 2026</span>
+              <img src="assets/supporter_volunteer.webp" alt="Volunteer Hero">
+              <span class="position-absolute top-0 start-0 m-2 badge rounded-pill" style="background:var(--orange-500);color:#fff;">Volunteer Spotlight</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="blog-title">Meet Ramesh: The Salem Bike Volunteer Delivering Rations</h3>
+              <p class="blog-summary">Every Saturday, Ramesh rides across Salem alleys delivering emergency kits and food packets to bedridden elders.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="text-muted small"><i class="fa-solid fa-user me-1"></i> Editorial Team</span>
+                <a href="javascript:void(0)" class="blog-readmore" data-bs-toggle="modal" data-bs-target="#storyModal1">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 4 — BENEFICIARY VOICES VIDEO SHOWCASE
+       ══════════════════════════════════════════════════════════ -->
+  <section class="py-5 reveal-init" style="background: linear-gradient(135deg, var(--teal-900) 0%, #0d3d33 100%);">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 reveal-card reveal-left">
+          <span class="section-eyebrow-orange"><span class="hero-badge-line"></span><span>Beneficiary Voices</span><span class="hero-badge-line"></span></span>
+          <h2 class="fw-black text-white mt-3 mb-3" style="font-size:2rem; line-height:1.2;">
+            Hear It From Those Whose Lives Changed
+          </h2>
+          <p class="text-white-50 mb-4" style="font-size:1rem; line-height:1.7;">
+            Over 3,200 beneficiary testimonials recorded across Salem in 2026. These are unscripted, unedited voices — speaking Tamil, Telugu, and Kannada about how community support transformed their daily realities.
+          </p>
+          <div class="d-flex gap-3 flex-wrap mb-4">
+            <div class="text-center p-3 rounded-3" style="background:rgba(255,255,255,.08); min-width:100px;">
+              <div class="fw-black text-warning" style="font-size:1.5rem;">3,200+</div>
+              <div class="text-white-50 small">Testimonials</div>
+            </div>
+            <div class="text-center p-3 rounded-3" style="background:rgba(255,255,255,.08); min-width:100px;">
+              <div class="fw-black text-warning" style="font-size:1.5rem;">46</div>
+              <div class="text-white-50 small">Salem Wards</div>
+            </div>
+            <div class="text-center p-3 rounded-3" style="background:rgba(255,255,255,.08); min-width:100px;">
+              <div class="fw-black text-warning" style="font-size:1.5rem;">3</div>
+              <div class="text-white-50 small">Languages</div>
+            </div>
+          </div>
+          <a href="404.html" class="btn btn-pill-orange px-4 py-2">
+            <i class="fa-solid fa-play me-2"></i><span>Watch Full Documentary</span>
+          </a>
+        </div>
+        <div class="col-lg-7 reveal-card reveal-right">
+          <a href="404.html" class="position-relative rounded-4 overflow-hidden shadow-lg d-block text-decoration-none" style="cursor:pointer;">
+            <img src="assets/pexels-yankrukov-7793726.webp" alt="Beneficiary Video" class="img-fluid w-100" style="height:360px; object-fit:cover;">
+            <div class="position-absolute inset-0 d-flex align-items-center justify-content-center" style="top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,.35);">
+              <div class="d-flex align-items-center justify-content-center rounded-circle"
+                style="width:80px;height:80px; background:rgba(255,255,255,.95); box-shadow:0 8px 32px rgba(0,0,0,.3); transition:transform .3s;"
+                onmouseenter="this.style.transform='scale(1.12)'" onmouseleave="this.style.transform='scale(1)'">
+                <i class="fa-solid fa-play text-warning" style="font-size:1.8rem; margin-left:4px;"></i>
+              </div>
+            </div>
+            <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background:linear-gradient(to top, rgba(0,0,0,.75) 0%, transparent 100%);">
+              <div class="text-white fw-bold">Documentary: "Voices of Salem" — 2026 Impact Film</div>
+              <div class="text-white-50 small">22 minutes · Tamil / English subtitles</div>
+            </div>
+          </a>
+          
+          <div class="row g-3 mt-3">
+            <div class="col-4">
+              <a href="404.html" class="position-relative rounded-3 overflow-hidden d-block text-decoration-none" style="cursor:pointer; height:90px;">
+                <img src="assets/cause_kitchen.webp" alt="Kitchen Story" class="w-100 h-100" style="object-fit:cover;">
+                <div class="position-absolute inset-0 d-flex align-items-center justify-content-center" style="top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,.4);">
+                  <i class="fa-solid fa-play text-white" style="font-size:1rem;"></i>
+                </div>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="404.html" class="position-relative rounded-3 overflow-hidden d-block text-decoration-none" style="cursor:pointer; height:90px;">
+                <img src="assets/cause_education.webp" alt="Education Story" class="w-100 h-100" style="object-fit:cover;">
+                <div class="position-absolute inset-0 d-flex align-items-center justify-content-center" style="top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,.4);">
+                  <i class="fa-solid fa-play text-white" style="font-size:1rem;"></i>
+                </div>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="404.html" class="position-relative rounded-3 overflow-hidden d-block text-decoration-none" style="cursor:pointer; height:90px;">
+                <img src="assets/cause_healthcare.webp" alt="Healthcare Story" class="w-100 h-100" style="object-fit:cover;">
+                <div class="position-absolute inset-0 d-flex align-items-center justify-content-center" style="top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,.4);">
+                  <i class="fa-solid fa-play text-white" style="font-size:1rem;"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 5 — SALEM FIELD PHOTO JOURNAL MASONRY GRID
+       ══════════════════════════════════════════════════════════ -->
+  <section class="py-5 reveal-init" style="background:#fff;">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12 text-center reveal-card reveal-bottom">
+          <span class="section-eyebrow-orange"><span class="hero-badge-line"></span><span>From Our Lens</span><span class="hero-badge-line"></span></span>
+          <h2 class="section-title-charivo mt-2">Salem Field Photo Journal</h2>
+          <p class="text-muted mx-auto" style="max-width:580px;">Unfiltered moments captured by our ground volunteers across Salem's 46 wards — every frame tells a story of resilience.</p>
+        </div>
+      </div>
+      
+      <div class="row g-3">
+        
+        <div class="col-md-4 reveal-card reveal-bottom stagger-1">
+          <div class="photo-journal-item rounded-4 overflow-hidden" style="height:260px;">
+            <img src="assets/pexels-yankrukov-7693686.webp" alt="Field volunteers distributing food" class="w-100 h-100" style="object-fit:cover; transition:transform .5s;" onmouseenter="this.style.transform='scale(1.06)'" onmouseleave="this.style.transform='scale(1)'">
+            <div class="photo-journal-overlay">
+              <span class="fw-bold">Ward 12 Food Drive</span>
+              <small>Sep 2026</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal-card reveal-bottom stagger-2">
+          <div class="photo-journal-item rounded-4 overflow-hidden" style="height:260px;">
+            <img src="assets/pexels-yankrukov-7698802.webp" alt="Nutrition distribution" class="w-100 h-100" style="object-fit:cover; transition:transform .5s;" onmouseenter="this.style.transform='scale(1.06)'" onmouseleave="this.style.transform='scale(1)'">
+            <div class="photo-journal-overlay">
+              <span class="fw-bold">Nutrition Pack Distribution</span>
+              <small>Aug 2026</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal-card reveal-bottom stagger-3">
+          <div class="photo-journal-item rounded-4 overflow-hidden" style="height:260px;">
+            <img src="assets/pexels-yankrukov-7691675.webp" alt="Community health camp" class="w-100 h-100" style="object-fit:cover; transition:transform .5s;" onmouseenter="this.style.transform='scale(1.06)'" onmouseleave="this.style.transform='scale(1)'">
+            <div class="photo-journal-overlay">
+              <span class="fw-bold">Health Camp · Ward 7</span>
+              <small>Aug 2026</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-8 reveal-card reveal-left stagger-1">
+          <div class="photo-journal-item rounded-4 overflow-hidden" style="height:220px;">
+            <img src="assets/pexels-yankrukov-7793118.webp" alt="Water project inauguration" class="w-100 h-100" style="object-fit:cover; transition:transform .5s;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+            <div class="photo-journal-overlay">
+              <span class="fw-bold">Solar Borewell Inauguration · Kolathur</span>
+              <small>Jul 2026 · Ward 19</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal-card reveal-right stagger-2">
+          <div class="photo-journal-item rounded-4 overflow-hidden" style="height:220px;">
+            <img src="assets/pexels-mart-production-7550362.webp" alt="Elderly care" class="w-100 h-100" style="object-fit:cover; transition:transform .5s;" onmouseenter="this.style.transform='scale(1.06)'" onmouseleave="this.style.transform='scale(1)'">
+            <div class="photo-journal-overlay">
+              <span class="fw-bold">Elder Care Rounds</span>
+              <small>Jul 2026</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 reveal-card reveal-left stagger-1">
+          <div class="photo-journal-item rounded-4 overflow-hidden" style="height:220px;">
+            <img src="assets/pexels-mikael-blomkvist-6476261.webp" alt="Audit transparency session" class="w-100 h-100" style="object-fit:cover; transition:transform .5s;" onmouseenter="this.style.transform='scale(1.06)'" onmouseleave="this.style.transform='scale(1)'">
+            <div class="photo-journal-overlay">
+              <span class="fw-bold">Donor Audit Session</span>
+              <small>Jun 2026</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 reveal-card reveal-right stagger-2">
+          <div class="photo-journal-item rounded-4 overflow-hidden" style="height:220px;">
+            <img src="assets/pexels-tima-miroshnichenko-7567558.webp" alt="Volunteer team briefing" class="w-100 h-100" style="object-fit:cover; transition:transform .5s;" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+            <div class="photo-journal-overlay">
+              <span class="fw-bold">Volunteer Morning Briefing · Salem HQ</span>
+              <small>Jun 2026 · 148 Volunteers</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 6 — MONTHLY AUDIT DISPATCH NEWSLETTER CTA
+       ══════════════════════════════════════════════════════════ -->
+  <section class="py-5 reveal-init" id="newsletter-cta" style="background: linear-gradient(135deg, #fff8f0 0%, #fff 55%, #f0fdf8 100%); border-top: 4px solid var(--orange-400); position: relative; overflow: hidden;">
+    <div aria-hidden="true" style="position:absolute; top:-60px; right:-60px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(255,164,27,.18) 0%, transparent 70%); pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; bottom:-80px; left:-80px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle, rgba(20,108,90,.14) 0%, transparent 70%); pointer-events:none;"></div>
+
+    <div class="container position-relative">
+      <div class="row g-3 mb-5 reveal-card reveal-bottom">
+        <div class="col-6 col-md-3">
+          <div class="dispatch-stat-card text-center p-3 rounded-4 h-100">
+            <div class="dispatch-stat-icon" style="background:var(--orange-100,#fde8d5); color:var(--orange-500);"><i class="fa-solid fa-users"></i></div>
+            <div class="dispatch-stat-num fw-black" style="color:var(--teal-900);">4,820+</div>
+            <div class="text-muted small">Active Subscribers</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="dispatch-stat-card text-center p-3 rounded-4 h-100">
+            <div class="dispatch-stat-icon" style="background:var(--teal-100,#d0ede8); color:var(--teal-700);"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <div class="dispatch-stat-num fw-black" style="color:var(--teal-900);">96%</div>
+            <div class="text-muted small">Open Rate</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="dispatch-stat-card text-center p-3 rounded-4 h-100">
+            <div class="dispatch-stat-icon" style="background:var(--orange-100,#fde8d5); color:var(--orange-500);"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="dispatch-stat-num fw-black" style="color:var(--teal-900);">38</div>
+            <div class="text-muted small">Issues Published</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="dispatch-stat-card text-center p-3 rounded-4 h-100">
+            <div class="dispatch-stat-icon" style="background:var(--teal-100,#d0ede8); color:var(--teal-700);"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="dispatch-stat-num fw-black" style="color:var(--teal-900);">100%</div>
+            <div class="text-muted small">Audit Verified</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-card reveal-left">
+          <span class="section-eyebrow-orange"><span class="hero-badge-line"></span><span>Monthly Dispatch</span><span class="hero-badge-line"></span></span>
+          <h2 class="fw-black mt-3 mb-3" style="font-size:2rem; color:var(--teal-900); line-height:1.2;">
+            Get the Salem Impact Dispatch<br><span style="color:var(--orange-500);">Straight to Your Inbox</span>
+          </h2>
+          <p class="text-muted mb-4" style="font-size:1rem; line-height:1.7;">
+            Every first Sunday of the month we send our verified donor subscribers a PDF audit dispatch — ground photos, fund utilization breakdown, beneficiary count, and upcoming drives for the coming month. No fluff. Just transparent impact.
+          </p>
+
+          <div class="dispatch-issue-preview d-flex align-items-center gap-3 p-3 rounded-4 mb-4" style="background:#fff; border:1px dashed rgba(20,108,90,.28); box-shadow:0 6px 20px rgba(10,54,45,.06);">
+            <div class="dispatch-issue-cover d-flex flex-column align-items-center justify-content-center rounded-3" style="width:70px; height:88px; background:linear-gradient(145deg, var(--teal-700,#146c5a), var(--teal-900,#0a362d)); color:#fff; flex-shrink:0; position:relative; overflow:hidden;">
+              <i class="fa-solid fa-newspaper" style="font-size:1.4rem;"></i>
+              <div class="fw-black mt-1" style="font-size:.7rem; letter-spacing:.06em;">ISSUE 38</div>
+              <div style="position:absolute; top:6px; right:6px; width:10px; height:10px; border-radius:50%; background:var(--orange-400); box-shadow:0 0 0 3px rgba(255,164,27,.25);"></div>
+            </div>
+            <div class="flex-grow-1">
+              <div class="fw-bold" style="color:var(--teal-900); font-size:.98rem;">September 2026 · Issue #38</div>
+              <div class="text-muted small mb-2">Solar borewell audit, 2,400 meals log, Kaviya's surgery follow-up</div>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="dispatch-tag-pill"><i class="fa-solid fa-droplet me-1"></i>Water</span>
+                <span class="dispatch-tag-pill"><i class="fa-solid fa-bowl-food me-1"></i>Kitchen</span>
+                <span class="dispatch-tag-pill"><i class="fa-solid fa-heart-pulse me-1"></i>Health</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3 mb-2">
+            <div class="d-flex align-items-center gap-2">
+              <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px; background:var(--teal-100, #d0ede8);">
+                <i class="fa-solid fa-file-pdf" style="color:var(--teal-700); font-size:.9rem;"></i>
+              </div>
+              <span class="small text-muted">Monthly PDF Audit Report</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px; background:var(--orange-100, #fde8d5);">
+                <i class="fa-solid fa-camera" style="color:var(--orange-500); font-size:.9rem;"></i>
+              </div>
+              <span class="small text-muted">Verified Field Photos</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px; background:var(--teal-100, #d0ede8);">
+                <i class="fa-solid fa-chart-pie" style="color:var(--teal-700); font-size:.9rem;"></i>
+              </div>
+              <span class="small text-muted">Fund Utilization Breakdown</span>
+            </div>
+          </div>
+          <p class="text-muted small mb-0"><i class="fa-solid fa-lock me-1"></i> No spam. Unsubscribe anytime. Your email is never shared.</p>
+        </div>
+
+        <div class="col-lg-6 reveal-card reveal-right">
+          <form class="dispatch-subscribe-form p-4 p-lg-5 rounded-4 shadow position-relative" id="monthlyDispatchForm"
+                style="background:#fff; border:2px solid var(--teal-100, #d0ede8); overflow:hidden;">
+            <div class="dispatch-corner-ribbon"><i class="fa-solid fa-bolt me-1"></i> Free Forever</div>
+
+            <div class="mb-3">
+              <span class="badge px-3 py-2 rounded-pill" style="background:var(--orange-500);color:#fff; font-size:.8rem;">
+                <i class="fa-solid fa-envelope me-1"></i> Free Monthly Dispatch
+              </span>
+            </div>
+            <h4 class="fw-black mb-1" style="color:var(--teal-900);">Subscribe to the Salem Impact Letter</h4>
+            <p class="text-muted small mb-4">Next issue drops <strong style="color:var(--orange-500);">Sunday, 4 Oct 2026</strong> · 6:00 AM IST</p>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold small" style="color:var(--teal-800);">Your Full Name</label>
+              <div class="dispatch-input-wrap">
+                <i class="fa-solid fa-user dispatch-input-icon"></i>
+                <input type="text" name="dispatchName" required class="form-control rounded-3 py-2 dispatch-input" placeholder="e.g. Ramesh Krishnan">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold small" style="color:var(--teal-800);">Email Address</label>
+              <div class="dispatch-input-wrap">
+                <i class="fa-solid fa-envelope dispatch-input-icon"></i>
+                <input type="email" name="dispatchEmail" required class="form-control rounded-3 py-2 dispatch-input" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-semibold small" style="color:var(--teal-800);">Topics of Interest</label>
+              <div class="d-flex flex-wrap gap-2 dispatch-topic-pills">
+                <label class="dispatch-topic-pill">
+                  <input type="checkbox" name="topics" value="kitchen" checked>
+                  <span><i class="fa-solid fa-bowl-food me-1"></i>Field Kitchen</span>
+                </label>
+                <label class="dispatch-topic-pill">
+                  <input type="checkbox" name="topics" value="education">
+                  <span><i class="fa-solid fa-graduation-cap me-1"></i>Education</span>
+                </label>
+                <label class="dispatch-topic-pill">
+                  <input type="checkbox" name="topics" value="healthcare">
+                  <span><i class="fa-solid fa-heart-pulse me-1"></i>Healthcare</span>
+                </label>
+                <label class="dispatch-topic-pill">
+                  <input type="checkbox" name="topics" value="water">
+                  <span><i class="fa-solid fa-droplet me-1"></i>Clean Water</span>
+                </label>
+                <label class="dispatch-topic-pill">
+                  <input type="checkbox" name="topics" value="welfare">
+                  <span><i class="fa-solid fa-hand-holding-heart me-1"></i>Senior Welfare</span>
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-pill-teal w-100 py-2 fw-bold dispatch-submit-btn">
+              <i class="fa-solid fa-paper-plane me-2"></i><span>Subscribe — It's Free</span>
+            </button>
+            <div class="d-flex align-items-center justify-content-center gap-2 mt-3 text-muted small flex-wrap">
+              <div class="dispatch-avatar-stack">
+                <img src="assets/team_priya.webp" alt="Subscriber">
+                <img src="assets/supporter_patron.webp" alt="Subscriber">
+                <img src="assets/supporter_educator.webp" alt="Subscriber">
+              </div>
+              <span>Join <strong style="color:var(--teal-800);">4,820 subscribers</strong> already reading monthly</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="modal fade modal-charivo" id="storyModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold text-white"><i class="fa-solid fa-newspaper text-warning me-2"></i> Community Impact Dispatch</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <span class="badge bg-warning text-dark mb-2">Verified Ground Dispatch • Salem HQ</span>
+          <h3 class="fw-bold text-dark mb-3">How Community Solidarity Saved 450 Children From Malnutrition</h3>
+          <img src="assets/cause_nutrition.webp" alt="Story Feature" class="rounded-4 w-100 mb-3" style="max-height: 350px; object-fit: cover;">
+          <p class="text-muted">
+            In July 2026, Stackly initiated the Salem Morning Nutrition Drive targeting informal settlements near Chinna Thirupathi. Thanks to micro-donations of ₹500 and ₹1,000 from working professionals across Tamil Nadu, 450 school-going children received balanced breakfasts rich in sprouts, milk, boiled eggs, and pulses.
+          </p>
+          <p class="text-muted">
+            "School attendance rose by 34% within 60 days of starting the breakfast program," reports Headmaster Murugesan. Every grain and vegetable was procured from local Salem farmers' markets, creating a secondary income loop for small cultivators.
+          </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-2 pt-3 border-top">
+            <button class="btn-pill-orange trigger-donation-modal w-100 w-sm-auto justify-content-center" data-cause="Daily Nutrition for 450 Slum Children"><span>Support This Cause (₹500)</span></button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <footer class="footer-charivo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand"><img src="assets/logo.webp" alt="Stackly"></div>
+          <p class="footer-desc">
+            Stackly is Salem’s verified community donation network. We connect genuine donors with verified grassroots causes with 100% photo-verified transparency and 80G tax exemptions.
+          </p>
+          <div class="footer-social-links">
+            <a href="404.html" class="footer-social-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="donations.html">Donations</a></li>
+            <li><a href="campaigns.html">Campaigns</a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Account</h4>
+          <ul class="footer-links">
+            <li><a href="signin.html">Donor Login</a></li>
+            <li><a href="get-started.html">Create Account</a></li>
+            <li><a href="donor-dashboard.html">Supporter Dashboard</a></li>
+            <li><a href="admin-dashboard.html">Admin Operations</a></li>
+            <li><a href="donations.html">80G Tax Receipts</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 footer-hq-col">
+          <h4 class="footer-heading">Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot footer-contact-icon"></i>
+            <div>
+              <strong>Stackly Community Foundation</strong><br>
+              MMR Complex, Chinna Thirupathi,<br>
+              near Chinna Muniyappan Kovil,<br>
+              Salem, Tamil Nadu 636008
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone footer-contact-icon"></i>
+            <div>+91 98765 43210 / 0427 245 8899</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope footer-contact-icon"></i>
+            <div>contact@thestackly.org</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-md-start mb-2 mb-md-0">
+            &copy; 2026 Stackly. All Rights Reserved. Reg NGO: SLM/2026/8892.
+          </div>
+          <div class="col-md-6 text-md-end">
+            <span>Designed for Salem Grassroots Communities • 100% Mobile &amp; Tablet Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  <div class="modal fade modal-charivo" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold" id="donationModalLabel"><i class="fa-solid fa-heart text-warning me-2"></i> Contribution</h5>
+            <small class="text-white-50">80G Tax Exemption Certificate Provided</small>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="donationFormModal">
+            <div class="preset-amount-grid">
+              <div class="preset-amt-btn" data-amt="500">₹500</div>
+              <div class="preset-amt-btn active" data-amt="1000">₹1,000</div>
+              <div class="preset-amt-btn" data-amt="2500">₹2,500</div>
+              <div class="preset-amt-btn" data-amt="5000">₹5,000</div>
+            </div>
+            <div class="form-group-custom">
+              <label class="form-label-custom" for="customAmountInput">Custom Amount (INR)</label>
+              <input type="number" class="form-control-custom" id="customAmountInput" value="1000" min="50" placeholder="Enter amount in ₹">
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6"><input type="text" class="form-control-custom" id="donorNameInput" placeholder="Your Name" required></div>
+              <div class="col-6"><input type="email" class="form-control-custom" id="donorEmailInput" placeholder="Email for Receipt" required></div>
+            </div>
+            <button type="submit" class="btn-pill-orange w-100 justify-content-center py-3">
+              <span>Complete Contribution</span>
+              <i class="fa-solid fa-arrow-right ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="main.js"></script>
+</body>
+</html>

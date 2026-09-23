@@ -849,11 +849,11 @@ function initAuthAndForms() {
             if (selectedRole === 'admin') {
               window.location.href = 'admin-dashboard.html';
             } else {
-              window.location.href = 'donor.html';
+              window.location.href = 'donor-dashboard.html';
             }
           });
         } else {
-          window.location.href = selectedRole === 'admin' ? 'admin-dashboard.html' : 'donor.html';
+          window.location.href = selectedRole === 'admin' ? 'admin-dashboard.html' : 'donor-dashboard.html';
         }
       }
     });
